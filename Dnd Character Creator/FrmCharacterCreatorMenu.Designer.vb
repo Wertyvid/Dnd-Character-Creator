@@ -22,9 +22,89 @@ Partial Class FrmCharacterCreatorMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "FrmCharacterCreatorMenu"
+        TabLayMain = New TabControl()
+        TabPgeClass = New TabPage()
+        TableLayoutPanel1 = New TableLayoutPanel()
+        CmbBoxClassSelect = New ComboBox()
+        TabPgeStats = New TabPage()
+        TabLayMain.SuspendLayout()
+        TabPgeClass.SuspendLayout()
+        TableLayoutPanel1.SuspendLayout()
+        SuspendLayout()
+        ' 
+        ' TabLayMain
+        ' 
+        TabLayMain.Controls.Add(TabPgeClass)
+        TabLayMain.Controls.Add(TabPgeStats)
+        TabLayMain.Dock = DockStyle.Fill
+        TabLayMain.Location = New Point(0, 0)
+        TabLayMain.Name = "TabLayMain"
+        TabLayMain.SelectedIndex = 0
+        TabLayMain.Size = New Size(800, 450)
+        TabLayMain.TabIndex = 0
+        ' 
+        ' TabPgeClass
+        ' 
+        TabPgeClass.Controls.Add(TableLayoutPanel1)
+        TabPgeClass.Location = New Point(4, 24)
+        TabPgeClass.Name = "TabPgeClass"
+        TabPgeClass.Padding = New Padding(3)
+        TabPgeClass.Size = New Size(792, 422)
+        TabPgeClass.TabIndex = 0
+        TabPgeClass.Text = "Class & Race"
+        TabPgeClass.UseVisualStyleBackColor = True
+        ' 
+        ' TableLayoutPanel1
+        ' 
+        TableLayoutPanel1.ColumnCount = 2
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.Controls.Add(CmbBoxClassSelect, 0, 0)
+        TableLayoutPanel1.Dock = DockStyle.Fill
+        TableLayoutPanel1.Location = New Point(3, 3)
+        TableLayoutPanel1.Name = "TableLayoutPanel1"
+        TableLayoutPanel1.RowCount = 2
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.Size = New Size(786, 416)
+        TableLayoutPanel1.TabIndex = 0
+        ' 
+        ' CmbBoxClassSelect
+        ' 
+        CmbBoxClassSelect.FormattingEnabled = True
+        CmbBoxClassSelect.Items.AddRange(New Object() {"a", "b", "c"})
+        CmbBoxClassSelect.Location = New Point(3, 3)
+        CmbBoxClassSelect.Name = "CmbBoxClassSelect"
+        CmbBoxClassSelect.Size = New Size(121, 23)
+        CmbBoxClassSelect.TabIndex = 1
+        ' 
+        ' TabPgeStats
+        ' 
+        TabPgeStats.Location = New Point(4, 24)
+        TabPgeStats.Name = "TabPgeStats"
+        TabPgeStats.Padding = New Padding(3)
+        TabPgeStats.Size = New Size(792, 422)
+        TabPgeStats.TabIndex = 1
+        TabPgeStats.Text = "Stats"
+        TabPgeStats.UseVisualStyleBackColor = True
+        ' 
+        ' FrmCharacterCreatorMenu
+        ' 
+        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(800, 450)
+        Controls.Add(TabLayMain)
+        Name = "FrmCharacterCreatorMenu"
+        Text = "FrmCharacterCreatorMenu"
+        TabLayMain.ResumeLayout(False)
+        TabPgeClass.ResumeLayout(False)
+        TableLayoutPanel1.ResumeLayout(False)
+        ResumeLayout(False)
     End Sub
+
+    Friend WithEvents TabLayMain As TabControl
+    Friend WithEvents TabPgeClass As TabPage
+    Friend WithEvents TabPgeStats As TabPage
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents CmbBoxClassSelect As ComboBox
 End Class
