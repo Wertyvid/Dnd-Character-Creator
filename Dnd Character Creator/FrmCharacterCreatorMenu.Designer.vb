@@ -26,12 +26,40 @@ Partial Class FrmCharacterCreatorMenu
         TabPgeClass = New TabPage()
         TableLayoutPanel1 = New TableLayoutPanel()
         CmbBoxClassSelect = New ComboBox()
-        BtnApply = New Button()
+        BtnApplyClassRace = New Button()
         CmbBoxRaceSelect = New ComboBox()
         TabPgeStats = New TabPage()
+        TableLayoutPanel2 = New TableLayoutPanel()
+        TableLayoutPanel3 = New TableLayoutPanel()
+        LblPointsRemaining = New Label()
+        LblStandardArray = New Label()
+        TableLayoutPanel4 = New TableLayoutPanel()
+        BtnApplyStats = New Button()
+        NumWis = New NumericUpDown()
+        NumCha = New NumericUpDown()
+        NumInt = New NumericUpDown()
+        NumCon = New NumericUpDown()
+        NumDex = New NumericUpDown()
+        NumStr = New NumericUpDown()
+        Label1 = New Label()
+        Label2 = New Label()
+        Label3 = New Label()
+        Label4 = New Label()
+        Label5 = New Label()
+        Label6 = New Label()
         TabLayMain.SuspendLayout()
         TabPgeClass.SuspendLayout()
         TableLayoutPanel1.SuspendLayout()
+        TabPgeStats.SuspendLayout()
+        TableLayoutPanel2.SuspendLayout()
+        TableLayoutPanel3.SuspendLayout()
+        TableLayoutPanel4.SuspendLayout()
+        CType(NumWis, ComponentModel.ISupportInitialize).BeginInit()
+        CType(NumCha, ComponentModel.ISupportInitialize).BeginInit()
+        CType(NumInt, ComponentModel.ISupportInitialize).BeginInit()
+        CType(NumCon, ComponentModel.ISupportInitialize).BeginInit()
+        CType(NumDex, ComponentModel.ISupportInitialize).BeginInit()
+        CType(NumStr, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' TabLayMain
@@ -62,7 +90,7 @@ Partial Class FrmCharacterCreatorMenu
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
         TableLayoutPanel1.Controls.Add(CmbBoxClassSelect, 0, 0)
-        TableLayoutPanel1.Controls.Add(BtnApply, 1, 0)
+        TableLayoutPanel1.Controls.Add(BtnApplyClassRace, 1, 0)
         TableLayoutPanel1.Controls.Add(CmbBoxRaceSelect, 0, 1)
         TableLayoutPanel1.Dock = DockStyle.Fill
         TableLayoutPanel1.Location = New Point(3, 3)
@@ -81,14 +109,14 @@ Partial Class FrmCharacterCreatorMenu
         CmbBoxClassSelect.Size = New Size(121, 23)
         CmbBoxClassSelect.TabIndex = 1
         ' 
-        ' BtnApply
+        ' BtnApplyClassRace
         ' 
-        BtnApply.Location = New Point(396, 3)
-        BtnApply.Name = "BtnApply"
-        BtnApply.Size = New Size(75, 23)
-        BtnApply.TabIndex = 2
-        BtnApply.Text = "Apply!"
-        BtnApply.UseVisualStyleBackColor = True
+        BtnApplyClassRace.Location = New Point(396, 3)
+        BtnApplyClassRace.Name = "BtnApplyClassRace"
+        BtnApplyClassRace.Size = New Size(75, 23)
+        BtnApplyClassRace.TabIndex = 2
+        BtnApplyClassRace.Text = "Apply!"
+        BtnApplyClassRace.UseVisualStyleBackColor = True
         ' 
         ' CmbBoxRaceSelect
         ' 
@@ -100,6 +128,7 @@ Partial Class FrmCharacterCreatorMenu
         ' 
         ' TabPgeStats
         ' 
+        TabPgeStats.Controls.Add(TableLayoutPanel2)
         TabPgeStats.Location = New Point(4, 24)
         TabPgeStats.Name = "TabPgeStats"
         TabPgeStats.Padding = New Padding(3)
@@ -107,6 +136,215 @@ Partial Class FrmCharacterCreatorMenu
         TabPgeStats.TabIndex = 1
         TabPgeStats.Text = "Stats"
         TabPgeStats.UseVisualStyleBackColor = True
+        ' 
+        ' TableLayoutPanel2
+        ' 
+        TableLayoutPanel2.ColumnCount = 1
+        TableLayoutPanel2.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel2.Controls.Add(TableLayoutPanel3, 0, 1)
+        TableLayoutPanel2.Controls.Add(TableLayoutPanel4, 0, 0)
+        TableLayoutPanel2.Dock = DockStyle.Fill
+        TableLayoutPanel2.Location = New Point(3, 3)
+        TableLayoutPanel2.Name = "TableLayoutPanel2"
+        TableLayoutPanel2.RowCount = 2
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel2.Size = New Size(786, 416)
+        TableLayoutPanel2.TabIndex = 0
+        ' 
+        ' TableLayoutPanel3
+        ' 
+        TableLayoutPanel3.ColumnCount = 2
+        TableLayoutPanel3.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel3.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel3.Controls.Add(LblPointsRemaining, 1, 0)
+        TableLayoutPanel3.Controls.Add(LblStandardArray, 0, 0)
+        TableLayoutPanel3.Dock = DockStyle.Fill
+        TableLayoutPanel3.Location = New Point(3, 211)
+        TableLayoutPanel3.Name = "TableLayoutPanel3"
+        TableLayoutPanel3.RowCount = 1
+        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel3.Size = New Size(780, 202)
+        TableLayoutPanel3.TabIndex = 0
+        ' 
+        ' LblPointsRemaining
+        ' 
+        LblPointsRemaining.AutoSize = True
+        LblPointsRemaining.Location = New Point(393, 0)
+        LblPointsRemaining.Name = "LblPointsRemaining"
+        LblPointsRemaining.Size = New Size(202, 30)
+        LblPointsRemaining.TabIndex = 0
+        LblPointsRemaining.Text = "Don't go above 15 if using point buy!" & vbCrLf & "Point Buy Points remaining:"
+        ' 
+        ' LblStandardArray
+        ' 
+        LblStandardArray.AutoSize = True
+        LblStandardArray.Location = New Point(3, 0)
+        LblStandardArray.Name = "LblStandardArray"
+        LblStandardArray.Size = New Size(141, 105)
+        LblStandardArray.TabIndex = 1
+        LblStandardArray.Text = "Standard array values are:" & vbCrLf & "15" & vbCrLf & "14" & vbCrLf & "13" & vbCrLf & "12" & vbCrLf & "10" & vbCrLf & "8" & vbCrLf
+        ' 
+        ' TableLayoutPanel4
+        ' 
+        TableLayoutPanel4.ColumnCount = 7
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 14.28571F))
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 14.2857161F))
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 14.2857161F))
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 14.2857161F))
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 14.2857161F))
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 14.2857161F))
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 14.2857161F))
+        TableLayoutPanel4.Controls.Add(BtnApplyStats, 6, 0)
+        TableLayoutPanel4.Controls.Add(NumWis, 4, 1)
+        TableLayoutPanel4.Controls.Add(NumCha, 5, 1)
+        TableLayoutPanel4.Controls.Add(NumInt, 3, 1)
+        TableLayoutPanel4.Controls.Add(NumCon, 2, 1)
+        TableLayoutPanel4.Controls.Add(NumDex, 1, 1)
+        TableLayoutPanel4.Controls.Add(NumStr, 0, 1)
+        TableLayoutPanel4.Controls.Add(Label1, 5, 0)
+        TableLayoutPanel4.Controls.Add(Label2, 4, 0)
+        TableLayoutPanel4.Controls.Add(Label3, 3, 0)
+        TableLayoutPanel4.Controls.Add(Label4, 2, 0)
+        TableLayoutPanel4.Controls.Add(Label5, 1, 0)
+        TableLayoutPanel4.Controls.Add(Label6, 0, 0)
+        TableLayoutPanel4.Dock = DockStyle.Fill
+        TableLayoutPanel4.Location = New Point(3, 3)
+        TableLayoutPanel4.Name = "TableLayoutPanel4"
+        TableLayoutPanel4.RowCount = 2
+        TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 80F))
+        TableLayoutPanel4.Size = New Size(780, 202)
+        TableLayoutPanel4.TabIndex = 1
+        ' 
+        ' BtnApplyStats
+        ' 
+        BtnApplyStats.Location = New Point(669, 3)
+        BtnApplyStats.Name = "BtnApplyStats"
+        BtnApplyStats.Size = New Size(75, 23)
+        BtnApplyStats.TabIndex = 6
+        BtnApplyStats.Text = "Apply!"
+        BtnApplyStats.UseVisualStyleBackColor = True
+        ' 
+        ' NumWis
+        ' 
+        NumWis.Anchor = AnchorStyles.None
+        NumWis.Location = New Point(447, 109)
+        NumWis.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
+        NumWis.Minimum = New Decimal(New Integer() {8, 0, 0, 0})
+        NumWis.Name = "NumWis"
+        NumWis.Size = New Size(105, 23)
+        NumWis.TabIndex = 2
+        NumWis.Value = New Decimal(New Integer() {8, 0, 0, 0})
+        ' 
+        ' NumCha
+        ' 
+        NumCha.Anchor = AnchorStyles.None
+        NumCha.Location = New Point(558, 109)
+        NumCha.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
+        NumCha.Minimum = New Decimal(New Integer() {8, 0, 0, 0})
+        NumCha.Name = "NumCha"
+        NumCha.Size = New Size(105, 23)
+        NumCha.TabIndex = 3
+        NumCha.Value = New Decimal(New Integer() {8, 0, 0, 0})
+        ' 
+        ' NumInt
+        ' 
+        NumInt.Anchor = AnchorStyles.None
+        NumInt.Location = New Point(336, 109)
+        NumInt.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
+        NumInt.Minimum = New Decimal(New Integer() {8, 0, 0, 0})
+        NumInt.Name = "NumInt"
+        NumInt.Size = New Size(105, 23)
+        NumInt.TabIndex = 0
+        NumInt.Value = New Decimal(New Integer() {8, 0, 0, 0})
+        ' 
+        ' NumCon
+        ' 
+        NumCon.Anchor = AnchorStyles.None
+        NumCon.Location = New Point(225, 109)
+        NumCon.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
+        NumCon.Minimum = New Decimal(New Integer() {8, 0, 0, 0})
+        NumCon.Name = "NumCon"
+        NumCon.Size = New Size(105, 23)
+        NumCon.TabIndex = 1
+        NumCon.Value = New Decimal(New Integer() {8, 0, 0, 0})
+        ' 
+        ' NumDex
+        ' 
+        NumDex.Anchor = AnchorStyles.None
+        NumDex.Location = New Point(114, 109)
+        NumDex.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
+        NumDex.Minimum = New Decimal(New Integer() {8, 0, 0, 0})
+        NumDex.Name = "NumDex"
+        NumDex.Size = New Size(105, 23)
+        NumDex.TabIndex = 4
+        NumDex.Value = New Decimal(New Integer() {8, 0, 0, 0})
+        ' 
+        ' NumStr
+        ' 
+        NumStr.Anchor = AnchorStyles.None
+        NumStr.Location = New Point(3, 109)
+        NumStr.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
+        NumStr.Minimum = New Decimal(New Integer() {8, 0, 0, 0})
+        NumStr.Name = "NumStr"
+        NumStr.Size = New Size(105, 23)
+        NumStr.TabIndex = 5
+        NumStr.Value = New Decimal(New Integer() {8, 0, 0, 0})
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(558, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(57, 15)
+        Label1.TabIndex = 7
+        Label1.Text = "Charisma"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(447, 0)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(51, 15)
+        Label2.TabIndex = 8
+        Label2.Text = "Wisdom"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Location = New Point(336, 0)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(68, 15)
+        Label3.TabIndex = 9
+        Label3.Text = "Intelligence"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Location = New Point(225, 0)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(73, 15)
+        Label4.TabIndex = 10
+        Label4.Text = "Constitution"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(114, 0)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(54, 15)
+        Label5.TabIndex = 11
+        Label5.Text = "Dexterity"
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Location = New Point(3, 0)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(52, 15)
+        Label6.TabIndex = 12
+        Label6.Text = "Strength"
         ' 
         ' FrmCharacterCreatorMenu
         ' 
@@ -119,6 +357,18 @@ Partial Class FrmCharacterCreatorMenu
         TabLayMain.ResumeLayout(False)
         TabPgeClass.ResumeLayout(False)
         TableLayoutPanel1.ResumeLayout(False)
+        TabPgeStats.ResumeLayout(False)
+        TableLayoutPanel2.ResumeLayout(False)
+        TableLayoutPanel3.ResumeLayout(False)
+        TableLayoutPanel3.PerformLayout()
+        TableLayoutPanel4.ResumeLayout(False)
+        TableLayoutPanel4.PerformLayout()
+        CType(NumWis, ComponentModel.ISupportInitialize).EndInit()
+        CType(NumCha, ComponentModel.ISupportInitialize).EndInit()
+        CType(NumInt, ComponentModel.ISupportInitialize).EndInit()
+        CType(NumCon, ComponentModel.ISupportInitialize).EndInit()
+        CType(NumDex, ComponentModel.ISupportInitialize).EndInit()
+        CType(NumStr, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -127,6 +377,24 @@ Partial Class FrmCharacterCreatorMenu
     Friend WithEvents TabPgeStats As TabPage
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents CmbBoxClassSelect As ComboBox
-    Friend WithEvents BtnApply As Button
+    Friend WithEvents BtnApplyClassRace As Button
     Friend WithEvents CmbBoxRaceSelect As ComboBox
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents LblPointsRemaining As Label
+    Friend WithEvents LblStandardArray As Label
+    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
+    Friend WithEvents NumCon As NumericUpDown
+    Friend WithEvents NumDex As NumericUpDown
+    Friend WithEvents NumStr As NumericUpDown
+    Friend WithEvents BtnApplyStats As Button
+    Friend WithEvents NumWis As NumericUpDown
+    Friend WithEvents NumCha As NumericUpDown
+    Friend WithEvents NumInt As NumericUpDown
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
 End Class

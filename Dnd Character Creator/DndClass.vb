@@ -20,7 +20,7 @@ Public Class Stats
     Public wisdom As Integer = 0
     Public charisma As Integer = 0
 
-    Private Sub BoostFromStats(statBoost As Stats)
+    Public Sub BoostFromStats(statBoost As Stats)
         strength += statBoost.strength
         dexterity += statBoost.dexterity
         consititution += statBoost.consititution
