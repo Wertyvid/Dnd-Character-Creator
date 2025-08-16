@@ -26,6 +26,8 @@ Partial Class FrmCharacterCreatorMenu
         TabPgeClass = New TabPage()
         TableLayoutPanel1 = New TableLayoutPanel()
         CmbBoxClassSelect = New ComboBox()
+        BtnApply = New Button()
+        CmbBoxRaceSelect = New ComboBox()
         TabPgeStats = New TabPage()
         TabLayMain.SuspendLayout()
         TabPgeClass.SuspendLayout()
@@ -60,6 +62,8 @@ Partial Class FrmCharacterCreatorMenu
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
         TableLayoutPanel1.Controls.Add(CmbBoxClassSelect, 0, 0)
+        TableLayoutPanel1.Controls.Add(BtnApply, 1, 0)
+        TableLayoutPanel1.Controls.Add(CmbBoxRaceSelect, 0, 1)
         TableLayoutPanel1.Dock = DockStyle.Fill
         TableLayoutPanel1.Location = New Point(3, 3)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -72,11 +76,27 @@ Partial Class FrmCharacterCreatorMenu
         ' CmbBoxClassSelect
         ' 
         CmbBoxClassSelect.FormattingEnabled = True
-        CmbBoxClassSelect.Items.AddRange(New Object() {"a", "b", "c"})
         CmbBoxClassSelect.Location = New Point(3, 3)
         CmbBoxClassSelect.Name = "CmbBoxClassSelect"
         CmbBoxClassSelect.Size = New Size(121, 23)
         CmbBoxClassSelect.TabIndex = 1
+        ' 
+        ' BtnApply
+        ' 
+        BtnApply.Location = New Point(396, 3)
+        BtnApply.Name = "BtnApply"
+        BtnApply.Size = New Size(75, 23)
+        BtnApply.TabIndex = 2
+        BtnApply.Text = "Apply!"
+        BtnApply.UseVisualStyleBackColor = True
+        ' 
+        ' CmbBoxRaceSelect
+        ' 
+        CmbBoxRaceSelect.FormattingEnabled = True
+        CmbBoxRaceSelect.Location = New Point(3, 211)
+        CmbBoxRaceSelect.Name = "CmbBoxRaceSelect"
+        CmbBoxRaceSelect.Size = New Size(121, 23)
+        CmbBoxRaceSelect.TabIndex = 3
         ' 
         ' TabPgeStats
         ' 
@@ -107,4 +127,6 @@ Partial Class FrmCharacterCreatorMenu
     Friend WithEvents TabPgeStats As TabPage
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents CmbBoxClassSelect As ComboBox
+    Friend WithEvents BtnApply As Button
+    Friend WithEvents CmbBoxRaceSelect As ComboBox
 End Class
