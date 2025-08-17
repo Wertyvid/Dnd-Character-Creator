@@ -1,6 +1,9 @@
-﻿Imports System.Text.Json.Nodes
+﻿Imports System.IO
+Imports System.Reflection.PortableExecutable
+Imports System.Text.Json.Nodes
 Imports System.Text.Json.Serialization
 Imports Newtonsoft.Json
+Imports Newtonsoft.Json.Serialization
 
 Public Class FrmCharacterCreatorMenu
     Dim classes As List(Of DndClass)
@@ -21,9 +24,11 @@ Public Class FrmCharacterCreatorMenu
         Try
             character.dndClass = classes(CmbBoxClassSelect.SelectedIndex)
             character.race = races(CmbBoxRaceSelect.SelectedIndex)
+            FillSkillOptions()
             UpdateStats()
             MessageBox.Show(JsonConvert.SerializeObject(character))
-        Catch
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString())
             MessageBox.Show("Select a class and a race before applying!")
         End Try
     End Sub
@@ -65,4 +70,35 @@ Public Class FrmCharacterCreatorMenu
         Next
         Return remainingPoints
     End Function
+
+    Public Sub FillSkillOptions()
+        FlwLaySkillOptions.Controls.Clear()
+        Dim newSkillPicker As ComboBox
+        For n As Integer = 1 To character.dndClass.skillCount
+            newSkillPicker = New ComboBox()
+            For Each skill In character.dndClass.skillOptions
+                newSkillPicker.Items.Add(skill)
+            Next
+            FlwLaySkillOptions.Controls.Add(newSkillPicker)
+        Next
+    End Sub
+
+    Private Sub BtnApplySkills_Click(sender As Object, e As EventArgs) Handles BtnApplySkills.Click
+        If Not IsNothing(character.dndClass) Then
+            Try
+                character.skills = New Skills(FlwLaySkillOptions, character.dndClass)
+            Catch ex As Exception
+                MessageBox.Show("Choose skills before applying!!")
+            End Try
+        Else
+            MessageBox.Show("Pick a class and skills before applying!")
+        End If
+        'character.skills.GetType()
+    End Sub
+
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
+        Dim characterFile As New StreamWriter(IO.File.Create("characters/goober.json"))
+        characterFile.WriteLine(JsonConvert.SerializeObject(character, Formatting.Indented))
+        characterFile.Close()
+    End Sub
 End Class

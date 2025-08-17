@@ -28,6 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="characters\charactershere.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="class jsons\all classes.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

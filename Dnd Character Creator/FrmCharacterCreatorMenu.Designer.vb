@@ -47,6 +47,14 @@ Partial Class FrmCharacterCreatorMenu
         Label4 = New Label()
         Label5 = New Label()
         Label6 = New Label()
+        TabPgeSkills = New TabPage()
+        TableLayoutPanel5 = New TableLayoutPanel()
+        FlwLaySkillOptions = New FlowLayoutPanel()
+        Label7 = New Label()
+        BtnApplySkills = New Button()
+        TabPgeSave = New TabPage()
+        TableLayoutPanel6 = New TableLayoutPanel()
+        BtnSave = New Button()
         TabLayMain.SuspendLayout()
         TabPgeClass.SuspendLayout()
         TableLayoutPanel1.SuspendLayout()
@@ -60,12 +68,19 @@ Partial Class FrmCharacterCreatorMenu
         CType(NumCon, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumDex, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumStr, ComponentModel.ISupportInitialize).BeginInit()
+        TabPgeSkills.SuspendLayout()
+        TableLayoutPanel5.SuspendLayout()
+        FlwLaySkillOptions.SuspendLayout()
+        TabPgeSave.SuspendLayout()
+        TableLayoutPanel6.SuspendLayout()
         SuspendLayout()
         ' 
         ' TabLayMain
         ' 
         TabLayMain.Controls.Add(TabPgeClass)
         TabLayMain.Controls.Add(TabPgeStats)
+        TabLayMain.Controls.Add(TabPgeSkills)
+        TabLayMain.Controls.Add(TabPgeSave)
         TabLayMain.Dock = DockStyle.Fill
         TabLayMain.Location = New Point(0, 0)
         TabLayMain.Name = "TabLayMain"
@@ -346,6 +361,94 @@ Partial Class FrmCharacterCreatorMenu
         Label6.TabIndex = 12
         Label6.Text = "Strength"
         ' 
+        ' TabPgeSkills
+        ' 
+        TabPgeSkills.Controls.Add(TableLayoutPanel5)
+        TabPgeSkills.Location = New Point(4, 24)
+        TabPgeSkills.Name = "TabPgeSkills"
+        TabPgeSkills.Padding = New Padding(3)
+        TabPgeSkills.Size = New Size(792, 422)
+        TabPgeSkills.TabIndex = 2
+        TabPgeSkills.Text = "Proficiences"
+        TabPgeSkills.UseVisualStyleBackColor = True
+        ' 
+        ' TableLayoutPanel5
+        ' 
+        TableLayoutPanel5.ColumnCount = 2
+        TableLayoutPanel5.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel5.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel5.Controls.Add(FlwLaySkillOptions, 0, 0)
+        TableLayoutPanel5.Controls.Add(BtnApplySkills, 1, 0)
+        TableLayoutPanel5.Dock = DockStyle.Fill
+        TableLayoutPanel5.Location = New Point(3, 3)
+        TableLayoutPanel5.Name = "TableLayoutPanel5"
+        TableLayoutPanel5.RowCount = 2
+        TableLayoutPanel5.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel5.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel5.Size = New Size(786, 416)
+        TableLayoutPanel5.TabIndex = 0
+        ' 
+        ' FlwLaySkillOptions
+        ' 
+        FlwLaySkillOptions.Controls.Add(Label7)
+        FlwLaySkillOptions.Location = New Point(3, 3)
+        FlwLaySkillOptions.Name = "FlwLaySkillOptions"
+        FlwLaySkillOptions.Size = New Size(128, 202)
+        FlwLaySkillOptions.TabIndex = 0
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Location = New Point(3, 0)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(103, 30)
+        Label7.TabIndex = 1
+        Label7.Text = "Pick a class to see your skill options!"
+        ' 
+        ' BtnApplySkills
+        ' 
+        BtnApplySkills.Location = New Point(396, 3)
+        BtnApplySkills.Name = "BtnApplySkills"
+        BtnApplySkills.Size = New Size(75, 23)
+        BtnApplySkills.TabIndex = 1
+        BtnApplySkills.Text = "Apply!"
+        BtnApplySkills.UseVisualStyleBackColor = True
+        ' 
+        ' TabPgeSave
+        ' 
+        TabPgeSave.Controls.Add(TableLayoutPanel6)
+        TabPgeSave.Location = New Point(4, 24)
+        TabPgeSave.Name = "TabPgeSave"
+        TabPgeSave.Padding = New Padding(3)
+        TabPgeSave.Size = New Size(792, 422)
+        TabPgeSave.TabIndex = 3
+        TabPgeSave.Text = "Save!"
+        TabPgeSave.UseVisualStyleBackColor = True
+        ' 
+        ' TableLayoutPanel6
+        ' 
+        TableLayoutPanel6.ColumnCount = 2
+        TableLayoutPanel6.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel6.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel6.Controls.Add(BtnSave, 1, 0)
+        TableLayoutPanel6.Dock = DockStyle.Fill
+        TableLayoutPanel6.Location = New Point(3, 3)
+        TableLayoutPanel6.Name = "TableLayoutPanel6"
+        TableLayoutPanel6.RowCount = 2
+        TableLayoutPanel6.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel6.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel6.Size = New Size(786, 416)
+        TableLayoutPanel6.TabIndex = 0
+        ' 
+        ' BtnSave
+        ' 
+        BtnSave.Location = New Point(396, 3)
+        BtnSave.Name = "BtnSave"
+        BtnSave.Size = New Size(75, 23)
+        BtnSave.TabIndex = 0
+        BtnSave.Text = "Save!"
+        BtnSave.UseVisualStyleBackColor = True
+        ' 
         ' FrmCharacterCreatorMenu
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -369,6 +472,12 @@ Partial Class FrmCharacterCreatorMenu
         CType(NumCon, ComponentModel.ISupportInitialize).EndInit()
         CType(NumDex, ComponentModel.ISupportInitialize).EndInit()
         CType(NumStr, ComponentModel.ISupportInitialize).EndInit()
+        TabPgeSkills.ResumeLayout(False)
+        TableLayoutPanel5.ResumeLayout(False)
+        FlwLaySkillOptions.ResumeLayout(False)
+        FlwLaySkillOptions.PerformLayout()
+        TabPgeSave.ResumeLayout(False)
+        TableLayoutPanel6.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -397,4 +506,12 @@ Partial Class FrmCharacterCreatorMenu
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents TabPgeSkills As TabPage
+    Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
+    Friend WithEvents FlwLaySkillOptions As FlowLayoutPanel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents BtnApplySkills As Button
+    Friend WithEvents TabPgeSave As TabPage
+    Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
+    Friend WithEvents BtnSave As Button
 End Class
