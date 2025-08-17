@@ -1,4 +1,6 @@
 ﻿
+Imports System.Windows.Forms.VisualStyles
+
 Public Class DndClass
     Public Property className As String
     Public Property hitDiceSize As Integer
@@ -52,9 +54,12 @@ Public Class Skills
     Public stealth As Boolean = False
     Public survival As Boolean = False
 
-    Sub New(selectionsPanel As FlowLayoutPanel, selectedClass As DndClass)
+    Sub New(selectionsPanel As FlowLayoutPanel, selectedClass As DndClass, selectedBackground As Background)
         For Each selectionBox As ComboBox In selectionsPanel.Controls
             AddSkill(selectedClass.skillOptions(selectionBox.SelectedIndex))
+        Next
+        For Each skill In selectedBackground.skills
+            AddSkill(skill)
         Next
     End Sub
 
@@ -160,8 +165,15 @@ Public Class Skills
     End Sub
 End Class
 
+Public Class Background
+    Public backgroundName As String
+    Public skills As List(Of String)
+    Public feature As String
+End Class
+
 Public Class Character
     Public dndClass As DndClass
+    Public background As Background
     Public race As Race
     Public stats As Stats
     Public skills As Skills

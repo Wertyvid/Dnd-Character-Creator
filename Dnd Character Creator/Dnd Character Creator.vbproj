@@ -37,6 +37,9 @@
     <None Update="class jsons\fighter.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="jsons\backgrounds.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="jsons\classes.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

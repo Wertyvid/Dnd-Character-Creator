@@ -8,15 +8,20 @@ Imports Newtonsoft.Json.Serialization
 Public Class FrmCharacterCreatorMenu
     Dim classes As List(Of DndClass)
     Dim races As List(Of Race)
+    Dim backgrounds As List(Of Background)
     Dim character As Character = New Character()
     Private Sub FrmCharacterCreatorMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         races = JsonConvert.DeserializeObject(Of List(Of Race))(IO.File.OpenText("jsons/races.json").ReadToEnd())
         classes = JsonConvert.DeserializeObject(Of List(Of DndClass))(IO.File.OpenText("jsons/classes.json").ReadToEnd())
+        backgrounds = JsonConvert.DeserializeObject(Of List(Of Background))(IO.File.OpenText("jsons/backgrounds.json").ReadToEnd())
         For Each race In races
             CmbBoxRaceSelect.Items.Add(race.raceName)
         Next
         For Each dndClass In classes
             CmbBoxClassSelect.Items.Add(dndClass.className)
+        Next
+        For Each background In backgrounds
+            CmbBoxBackgroundSelect.Items.Add(background.backgroundName)
         Next
     End Sub
 
@@ -24,6 +29,7 @@ Public Class FrmCharacterCreatorMenu
         Try
             character.dndClass = classes(CmbBoxClassSelect.SelectedIndex)
             character.race = races(CmbBoxRaceSelect.SelectedIndex)
+            character.background = backgrounds(CmbBoxBackgroundSelect.SelectedIndex)
             FillSkillOptions()
             UpdateStats()
             MessageBox.Show(JsonConvert.SerializeObject(character))
@@ -86,12 +92,12 @@ Public Class FrmCharacterCreatorMenu
     Private Sub BtnApplySkills_Click(sender As Object, e As EventArgs) Handles BtnApplySkills.Click
         If Not IsNothing(character.dndClass) Then
             Try
-                character.skills = New Skills(FlwLaySkillOptions, character.dndClass)
+                character.skills = New Skills(FlwLaySkillOptions, character.dndClass, character.background)
             Catch ex As Exception
                 MessageBox.Show("Choose skills before applying!!")
             End Try
         Else
-            MessageBox.Show("Pick a class and skills before applying!")
+            MessageBox.Show("Pick a class, background, and skills before applying!")
         End If
         'character.skills.GetType()
     End Sub

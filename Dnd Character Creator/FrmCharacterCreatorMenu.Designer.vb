@@ -28,6 +28,7 @@ Partial Class FrmCharacterCreatorMenu
         CmbBoxClassSelect = New ComboBox()
         BtnApplyClassRace = New Button()
         CmbBoxRaceSelect = New ComboBox()
+        CmbBoxBackgroundSelect = New ComboBox()
         TabPgeStats = New TabPage()
         TableLayoutPanel2 = New TableLayoutPanel()
         TableLayoutPanel3 = New TableLayoutPanel()
@@ -107,12 +108,14 @@ Partial Class FrmCharacterCreatorMenu
         TableLayoutPanel1.Controls.Add(CmbBoxClassSelect, 0, 0)
         TableLayoutPanel1.Controls.Add(BtnApplyClassRace, 1, 0)
         TableLayoutPanel1.Controls.Add(CmbBoxRaceSelect, 0, 1)
+        TableLayoutPanel1.Controls.Add(CmbBoxBackgroundSelect, 0, 2)
         TableLayoutPanel1.Dock = DockStyle.Fill
         TableLayoutPanel1.Location = New Point(3, 3)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
-        TableLayoutPanel1.RowCount = 2
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.RowCount = 3
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 33.3333321F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 33.3333321F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 33.3333321F))
         TableLayoutPanel1.Size = New Size(786, 416)
         TableLayoutPanel1.TabIndex = 0
         ' 
@@ -136,10 +139,18 @@ Partial Class FrmCharacterCreatorMenu
         ' CmbBoxRaceSelect
         ' 
         CmbBoxRaceSelect.FormattingEnabled = True
-        CmbBoxRaceSelect.Location = New Point(3, 211)
+        CmbBoxRaceSelect.Location = New Point(3, 141)
         CmbBoxRaceSelect.Name = "CmbBoxRaceSelect"
         CmbBoxRaceSelect.Size = New Size(121, 23)
         CmbBoxRaceSelect.TabIndex = 3
+        ' 
+        ' CmbBoxBackgroundSelect
+        ' 
+        CmbBoxBackgroundSelect.FormattingEnabled = True
+        CmbBoxBackgroundSelect.Location = New Point(3, 279)
+        CmbBoxBackgroundSelect.Name = "CmbBoxBackgroundSelect"
+        CmbBoxBackgroundSelect.Size = New Size(121, 23)
+        CmbBoxBackgroundSelect.TabIndex = 4
         ' 
         ' TabPgeStats
         ' 
@@ -514,4 +525,6 @@ Partial Class FrmCharacterCreatorMenu
     Friend WithEvents TabPgeSave As TabPage
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
     Friend WithEvents BtnSave As Button
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents CmbBoxBackgroundSelect As ComboBox
 End Class
