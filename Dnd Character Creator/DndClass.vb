@@ -1,9 +1,11 @@
 ﻿
 Imports System.Windows.Forms.VisualStyles
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class DndClass
     Public Property className As String
     Public Property hitDiceSize As Integer
+    Public Property savingThrows As List(Of String)
     Public Property skillCount As Integer
     Public Property skillOptions As List(Of String)
     Public Property features As List(Of String)
@@ -54,16 +56,34 @@ Public Class Skills
     Public stealth As Boolean = False
     Public survival As Boolean = False
 
+    Public saveStr As Boolean = False
+    Public saveDex As Boolean = False
+    Public saveCon As Boolean = False
+    Public saveInt As Boolean = False
+    Public saveWis As Boolean = False
+    Public saveCha As Boolean = False
+
     Sub New(selectionsPanel As FlowLayoutPanel, selectedClass As DndClass, selectedBackground As Background)
-        For Each selectionBox As ComboBox In selectionsPanel.Controls
-            AddSkill(selectedClass.skillOptions(selectionBox.SelectedIndex))
+        Dim duplicateSkill As Boolean = False
+        For Each selectionBox In selectionsPanel.Controls
+            If AddSkill(selectedClass.skillOptions(selectionBox.SelectedIndex)) Then
+                duplicateSkill = True
+            End If
         Next
         For Each skill In selectedBackground.skills
-            AddSkill(skill)
+            If duplicateSkill = AddSkill(skill) Then
+                duplicateSkill = True
+            End If
         Next
+        For Each savingThrow In selectedClass.savingThrows
+            AddSkill(savingThrow)
+        Next
+        If duplicateSkill Then
+            MessageBox.Show("You have a duplicate selected skill! You could have more proficiencies if you select unique skills.")
+        End If
     End Sub
 
-    Sub AddSkill(skillName As String)
+    Function AddSkill(skillName As String) As Boolean
         Dim duplicateSkill As Boolean = False
         'there's probably a better way to do this. idc
         Select Case skillName.ToLower
@@ -157,12 +177,21 @@ Public Class Skills
                     duplicateSkill = True
                 End If
                 survival = True
+            Case "strength"
+                saveStr = True
+            Case "dexterity"
+                saveDex = True
+            Case "constitution"
+                saveCon = True
+            Case "intelligence"
+                saveInt = True
+            Case "wisdom"
+                saveWis = True
+            Case "charisma"
+                saveCha = True
         End Select
-        If duplicateSkill Then
-            MessageBox.Show("You have a duplicate selected skill! You could have more proficiencies if you select unique skills.")
-        End If
-
-    End Sub
+        Return duplicateSkill
+    End Function
 End Class
 
 Public Class Background
