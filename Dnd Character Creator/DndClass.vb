@@ -63,6 +63,10 @@ Public Class Skills
     Public saveWis As Boolean = False
     Public saveCha As Boolean = False
 
+    Sub New()
+
+    End Sub
+
     Sub New(selectionsPanel As FlowLayoutPanel, selectedClass As DndClass, selectedBackground As Background)
         Dim duplicateSkill As Boolean = False
         For Each selectionBox In selectionsPanel.Controls

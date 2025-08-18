@@ -24,6 +24,8 @@ Partial Class FrmMenu
     Private Sub InitializeComponent()
         TableLayoutPanel1 = New TableLayoutPanel()
         BtnNewCharacter = New Button()
+        BtnCharacterSheet = New Button()
+        CharacterSheetSelector = New OpenFileDialog()
         TableLayoutPanel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -33,6 +35,7 @@ Partial Class FrmMenu
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
         TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
         TableLayoutPanel1.Controls.Add(BtnNewCharacter, 0, 1)
+        TableLayoutPanel1.Controls.Add(BtnCharacterSheet, 1, 1)
         TableLayoutPanel1.Dock = DockStyle.Fill
         TableLayoutPanel1.Location = New Point(0, 0)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -53,6 +56,24 @@ Partial Class FrmMenu
         BtnNewCharacter.Text = "Make new character"
         BtnNewCharacter.UseVisualStyleBackColor = True
         ' 
+        ' BtnCharacterSheet
+        ' 
+        BtnCharacterSheet.AutoSize = True
+        BtnCharacterSheet.Location = New Point(403, 228)
+        BtnCharacterSheet.Name = "BtnCharacterSheet"
+        BtnCharacterSheet.Size = New Size(129, 25)
+        BtnCharacterSheet.TabIndex = 1
+        BtnCharacterSheet.Text = "Open character sheet"
+        BtnCharacterSheet.UseVisualStyleBackColor = True
+        ' 
+        ' CharacterSheetSelector
+        ' 
+        CharacterSheetSelector.DefaultExt = "json"
+        CharacterSheetSelector.FileName = "OpenFileDialog1"
+        CharacterSheetSelector.Filter = "Jsons|*json"
+        CharacterSheetSelector.InitialDirectory = "characters"
+        CharacterSheetSelector.Title = "Select Character"
+        ' 
         ' FrmMenu
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -68,5 +89,7 @@ Partial Class FrmMenu
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents BtnNewCharacter As Button
+    Friend WithEvents BtnCharacterSheet As Button
+    Friend WithEvents CharacterSheetSelector As OpenFileDialog
 
 End Class
