@@ -12,7 +12,6 @@ Public Class FrmMenu
     End Sub
 
     Private Sub CharacterSheetSelector_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles CharacterSheetSelector.FileOk
-        MessageBox.Show(CharacterSheetSelector.FileName)
         If CharacterSheetSelector.FileName.EndsWith(".json") Then
             Dim characterSheetForm As FrmCharacterSheetMenu = New FrmCharacterSheetMenu(JsonConvert.DeserializeObject(Of Character)(IO.File.OpenText(CharacterSheetSelector.FileName).ReadToEnd()))
             characterSheetForm.Show()
