@@ -196,6 +196,17 @@ Public Class Skills
         End Select
         Return isDuplicateSkill
     End Function
+
+    Public Function GetSkillsValuesAsArray() As Boolean()
+        Dim skillArray As Boolean() = {acrobatics, animalHandling, arcana, athletics, deception, history, insight, intimidation,
+            investigation, medicine, nature, perception, performance, persuasion, religion, sleightOfHand, stealth, survival}
+        Return skillArray
+    End Function
+
+    Shared Function GetSkillNamesAsArray()
+        Return {"Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Inditimation",
+            "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight Of Hand", "Stealth", "Survival"}
+    End Function
 End Class
 
 Public Class Background

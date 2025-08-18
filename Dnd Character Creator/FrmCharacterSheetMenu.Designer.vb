@@ -47,14 +47,18 @@ Partial Class FrmCharacterSheetMenu
         TblLayMiscStats = New TableLayoutPanel()
         TblLayHealth = New TableLayoutPanel()
         Label1 = New Label()
+        TblLaySkillsMain = New TableLayoutPanel()
+        TblLaySkillProficiencies = New TableLayoutPanel()
         TabLayMain.SuspendLayout()
         TabPgeInfo.SuspendLayout()
+        TabPgeSkills.SuspendLayout()
         TableLayoutPanel1.SuspendLayout()
         TblLayInfoTop.SuspendLayout()
         TblLayInfo.SuspendLayout()
         TblLayStats.SuspendLayout()
         TblLayMiscStats.SuspendLayout()
         TblLayHealth.SuspendLayout()
+        TblLaySkillsMain.SuspendLayout()
         SuspendLayout()
         ' 
         ' TabLayMain
@@ -81,6 +85,7 @@ Partial Class FrmCharacterSheetMenu
         ' 
         ' TabPgeSkills
         ' 
+        TabPgeSkills.Controls.Add(TblLaySkillsMain)
         TabPgeSkills.Location = New Point(4, 24)
         TabPgeSkills.Name = "TabPgeSkills"
         TabPgeSkills.Padding = New Padding(3)
@@ -352,6 +357,49 @@ Partial Class FrmCharacterSheetMenu
         Label1.TabIndex = 0
         Label1.Text = "Label1"
         ' 
+        ' TblLaySkillsMain
+        ' 
+        TblLaySkillsMain.ColumnCount = 2
+        TblLaySkillsMain.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TblLaySkillsMain.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TblLaySkillsMain.Controls.Add(TblLaySkillProficiencies, 0, 0)
+        TblLaySkillsMain.Dock = DockStyle.Fill
+        TblLaySkillsMain.Location = New Point(3, 3)
+        TblLaySkillsMain.Name = "TblLaySkillsMain"
+        TblLaySkillsMain.RowCount = 1
+        TblLaySkillsMain.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TblLaySkillsMain.Size = New Size(905, 498)
+        TblLaySkillsMain.TabIndex = 0
+        ' 
+        ' TblLaySkillProficiencies
+        ' 
+        TblLaySkillProficiencies.ColumnCount = 1
+        TblLaySkillProficiencies.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
+        TblLaySkillProficiencies.Dock = DockStyle.Fill
+        TblLaySkillProficiencies.Location = New Point(3, 3)
+        TblLaySkillProficiencies.Name = "TblLaySkillProficiencies"
+        TblLaySkillProficiencies.RowCount = 18
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 5.55555534F))
+        TblLaySkillProficiencies.Size = New Size(446, 492)
+        TblLaySkillProficiencies.TabIndex = 0
+        ' 
         ' FrmCharacterSheetMenu
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -362,6 +410,7 @@ Partial Class FrmCharacterSheetMenu
         Text = "FrmCharacterSheetMenu"
         TabLayMain.ResumeLayout(False)
         TabPgeInfo.ResumeLayout(False)
+        TabPgeSkills.ResumeLayout(False)
         TableLayoutPanel1.ResumeLayout(False)
         TblLayInfoTop.ResumeLayout(False)
         TblLayInfoTop.PerformLayout()
@@ -370,6 +419,7 @@ Partial Class FrmCharacterSheetMenu
         TblLayMiscStats.ResumeLayout(False)
         TblLayHealth.ResumeLayout(False)
         TblLayHealth.PerformLayout()
+        TblLaySkillsMain.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -398,4 +448,6 @@ Partial Class FrmCharacterSheetMenu
     Friend WithEvents StaAC As StatIcon
     Friend WithEvents TblLayHealth As TableLayoutPanel
     Friend WithEvents Label1 As Label
+    Friend WithEvents TblLaySkillsMain As TableLayoutPanel
+    Friend WithEvents TblLaySkillProficiencies As TableLayoutPanel
 End Class
