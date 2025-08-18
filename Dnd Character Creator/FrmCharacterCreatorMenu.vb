@@ -107,7 +107,8 @@ Public Class FrmCharacterCreatorMenu
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         Try
             character.FinishCreation()
-            Dim characterFile As New StreamWriter(IO.File.Create("characters/goober.json"))
+            SaveCharacterSelector.ShowDialog()
+            Dim characterFile As New StreamWriter(SaveCharacterSelector.OpenFile)
             characterFile.WriteLine(JsonConvert.SerializeObject(character, Formatting.Indented))
             characterFile.Close()
         Catch ex As Exception

@@ -63,6 +63,7 @@ Partial Class FrmCharacterCreatorMenu
         TabPgeSave = New TabPage()
         TableLayoutPanel6 = New TableLayoutPanel()
         BtnSave = New Button()
+        SaveCharacterSelector = New SaveFileDialog()
         TabLayMain.SuspendLayout()
         TabPgeClass.SuspendLayout()
         TableLayoutPanel1.SuspendLayout()
@@ -545,6 +546,11 @@ Partial Class FrmCharacterCreatorMenu
         BtnSave.Text = "Save!"
         BtnSave.UseVisualStyleBackColor = True
         ' 
+        ' SaveCharacterSelector
+        ' 
+        SaveCharacterSelector.DefaultExt = "json"
+        SaveCharacterSelector.Filter = "json|*.json"
+        ' 
         ' FrmCharacterCreatorMenu
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -622,4 +628,5 @@ Partial Class FrmCharacterCreatorMenu
     Friend WithEvents BtnApplyDetails As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents CmbBoxAlignmentSelect As ComboBox
+    Friend WithEvents SaveCharacterSelector As SaveFileDialog
 End Class
