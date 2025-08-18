@@ -84,97 +84,97 @@ Public Class Skills
     End Sub
 
     Function AddSkill(skillName As String) As Boolean
-        Dim duplicateSkill As Boolean = False
+        Dim isDuplicateSkill As Boolean = False
         'there's probably a better way to do this. idc
         Select Case skillName.ToLower
             Case "acrobatics"
                 If acrobatics Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 acrobatics = True
             Case "animal handling"
                 If animalHandling Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 animalHandling = True
             Case "arcana"
                 If arcana Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 arcana = True
             Case "athletics"
                 If athletics Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 athletics = True
             Case "deception"
                 If deception Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 deception = True
             Case "history"
                 If history Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 history = True
             Case "insight"
                 If insight Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 insight = True
             Case "intimidation"
                 If intimidation Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 intimidation = True
             Case "investigation"
                 If investigation Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 investigation = True
             Case "medicine"
                 If medicine Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 medicine = True
             Case "nature"
                 If nature Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 nature = True
             Case "perception"
                 If perception Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 perception = True
             Case "performance"
                 If performance Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 performance = True
             Case "persuasion"
                 If persuasion Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 persuasion = True
             Case "religion"
                 If religion Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 religion = True
             Case "sleight of hand"
                 If sleightOfHand Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 sleightOfHand = True
             Case "stealth"
                 If stealth Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 stealth = True
             Case "survival"
                 If survival Then
-                    duplicateSkill = True
+                    isDuplicateSkill = True
                 End If
                 survival = True
             Case "strength"
@@ -190,7 +190,7 @@ Public Class Skills
             Case "charisma"
                 saveCha = True
         End Select
-        Return duplicateSkill
+        Return isDuplicateSkill
     End Function
 End Class
 
@@ -201,10 +201,38 @@ Public Class Background
 End Class
 
 Public Class Character
+    Public name As String
+    Public alignment As String
     Public dndClass As DndClass
     Public background As Background
     Public race As Race
     Public stats As Stats
     Public skills As Skills
+
+    Public maxHp As Integer
+    Public armourClass As Integer
+    Public initiative As Integer
+    Public proficiencyBonus As Integer
+    Public features As List(Of String) = New List(Of String)
+
+
+    Public Sub FinishCreation()
+        For Each feature In dndClass.features
+            features.Add(feature)
+        Next
+        For Each feature In race.features
+            features.Add(feature)
+        Next
+        features.Add(background.feature)
+        maxHp = dndClass.hitDiceSize + GetModifierFromScore(stats.consititution)
+        armourClass = 10 + GetModifierFromScore(stats.dexterity)
+        initiative = 10 + GetModifierFromScore(stats.dexterity)
+        proficiencyBonus = 2
+
+    End Sub
+
+    Private Function GetModifierFromScore(score As Integer) As Integer
+        Return Math.Floor((score - 10.0) / 2.0)
+    End Function
 End Class
 

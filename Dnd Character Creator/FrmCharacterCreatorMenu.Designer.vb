@@ -53,6 +53,13 @@ Partial Class FrmCharacterCreatorMenu
         FlwLaySkillOptions = New FlowLayoutPanel()
         Label7 = New Label()
         BtnApplySkills = New Button()
+        TabPgeDetails = New TabPage()
+        TableLayoutPanel7 = New TableLayoutPanel()
+        TxtBoxName = New TextBox()
+        Label8 = New Label()
+        BtnApplyDetails = New Button()
+        Label9 = New Label()
+        CmbBoxAlignmentSelect = New ComboBox()
         TabPgeSave = New TabPage()
         TableLayoutPanel6 = New TableLayoutPanel()
         BtnSave = New Button()
@@ -72,6 +79,8 @@ Partial Class FrmCharacterCreatorMenu
         TabPgeSkills.SuspendLayout()
         TableLayoutPanel5.SuspendLayout()
         FlwLaySkillOptions.SuspendLayout()
+        TabPgeDetails.SuspendLayout()
+        TableLayoutPanel7.SuspendLayout()
         TabPgeSave.SuspendLayout()
         TableLayoutPanel6.SuspendLayout()
         SuspendLayout()
@@ -81,6 +90,7 @@ Partial Class FrmCharacterCreatorMenu
         TabLayMain.Controls.Add(TabPgeClass)
         TabLayMain.Controls.Add(TabPgeStats)
         TabLayMain.Controls.Add(TabPgeSkills)
+        TabLayMain.Controls.Add(TabPgeDetails)
         TabLayMain.Controls.Add(TabPgeSave)
         TabLayMain.Dock = DockStyle.Fill
         TabLayMain.Location = New Point(0, 0)
@@ -425,6 +435,81 @@ Partial Class FrmCharacterCreatorMenu
         BtnApplySkills.Text = "Apply!"
         BtnApplySkills.UseVisualStyleBackColor = True
         ' 
+        ' TabPgeDetails
+        ' 
+        TabPgeDetails.Controls.Add(TableLayoutPanel7)
+        TabPgeDetails.Location = New Point(4, 24)
+        TabPgeDetails.Name = "TabPgeDetails"
+        TabPgeDetails.Padding = New Padding(3)
+        TabPgeDetails.Size = New Size(792, 422)
+        TabPgeDetails.TabIndex = 4
+        TabPgeDetails.Text = "Details"
+        TabPgeDetails.UseVisualStyleBackColor = True
+        ' 
+        ' TableLayoutPanel7
+        ' 
+        TableLayoutPanel7.ColumnCount = 3
+        TableLayoutPanel7.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        TableLayoutPanel7.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        TableLayoutPanel7.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel7.Controls.Add(TxtBoxName, 1, 0)
+        TableLayoutPanel7.Controls.Add(Label8, 0, 0)
+        TableLayoutPanel7.Controls.Add(BtnApplyDetails, 2, 0)
+        TableLayoutPanel7.Controls.Add(Label9, 0, 1)
+        TableLayoutPanel7.Controls.Add(CmbBoxAlignmentSelect, 1, 1)
+        TableLayoutPanel7.Dock = DockStyle.Fill
+        TableLayoutPanel7.Location = New Point(3, 3)
+        TableLayoutPanel7.Name = "TableLayoutPanel7"
+        TableLayoutPanel7.RowCount = 3
+        TableLayoutPanel7.RowStyles.Add(New RowStyle(SizeType.Percent, 33.3333321F))
+        TableLayoutPanel7.RowStyles.Add(New RowStyle(SizeType.Percent, 33.3333321F))
+        TableLayoutPanel7.RowStyles.Add(New RowStyle(SizeType.Percent, 33.3333321F))
+        TableLayoutPanel7.Size = New Size(786, 416)
+        TableLayoutPanel7.TabIndex = 0
+        ' 
+        ' TxtBoxName
+        ' 
+        TxtBoxName.Location = New Point(199, 3)
+        TxtBoxName.Name = "TxtBoxName"
+        TxtBoxName.Size = New Size(100, 23)
+        TxtBoxName.TabIndex = 0
+        TxtBoxName.Text = "Name"
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Location = New Point(3, 0)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(42, 15)
+        Label8.TabIndex = 1
+        Label8.Text = "Name:"
+        ' 
+        ' BtnApplyDetails
+        ' 
+        BtnApplyDetails.Location = New Point(395, 3)
+        BtnApplyDetails.Name = "BtnApplyDetails"
+        BtnApplyDetails.Size = New Size(75, 23)
+        BtnApplyDetails.TabIndex = 2
+        BtnApplyDetails.Text = "Apply!"
+        BtnApplyDetails.UseVisualStyleBackColor = True
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Location = New Point(3, 138)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(63, 15)
+        Label9.TabIndex = 3
+        Label9.Text = "Alignment"
+        ' 
+        ' CmbBoxAlignmentSelect
+        ' 
+        CmbBoxAlignmentSelect.FormattingEnabled = True
+        CmbBoxAlignmentSelect.Location = New Point(199, 141)
+        CmbBoxAlignmentSelect.Name = "CmbBoxAlignmentSelect"
+        CmbBoxAlignmentSelect.Size = New Size(121, 23)
+        CmbBoxAlignmentSelect.TabIndex = 4
+        ' 
         ' TabPgeSave
         ' 
         TabPgeSave.Controls.Add(TableLayoutPanel6)
@@ -487,6 +572,9 @@ Partial Class FrmCharacterCreatorMenu
         TableLayoutPanel5.ResumeLayout(False)
         FlwLaySkillOptions.ResumeLayout(False)
         FlwLaySkillOptions.PerformLayout()
+        TabPgeDetails.ResumeLayout(False)
+        TableLayoutPanel7.ResumeLayout(False)
+        TableLayoutPanel7.PerformLayout()
         TabPgeSave.ResumeLayout(False)
         TableLayoutPanel6.ResumeLayout(False)
         ResumeLayout(False)
@@ -527,4 +615,11 @@ Partial Class FrmCharacterCreatorMenu
     Friend WithEvents BtnSave As Button
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents CmbBoxBackgroundSelect As ComboBox
+    Friend WithEvents TabPgeDetails As TabPage
+    Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
+    Friend WithEvents TxtBoxName As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents BtnApplyDetails As Button
+    Friend WithEvents Label9 As Label
+    Friend WithEvents CmbBoxAlignmentSelect As ComboBox
 End Class

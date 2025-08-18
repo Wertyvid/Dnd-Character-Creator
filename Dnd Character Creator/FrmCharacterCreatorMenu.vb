@@ -9,6 +9,7 @@ Public Class FrmCharacterCreatorMenu
     Dim classes As List(Of DndClass)
     Dim races As List(Of Race)
     Dim backgrounds As List(Of Background)
+    Dim alignments As String() = New String() {"Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "True Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"}
     Dim character As Character = New Character()
     Private Sub FrmCharacterCreatorMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         races = JsonConvert.DeserializeObject(Of List(Of Race))(IO.File.OpenText("jsons/races.json").ReadToEnd())
@@ -23,6 +24,9 @@ Public Class FrmCharacterCreatorMenu
         For Each background In backgrounds
             CmbBoxBackgroundSelect.Items.Add(background.backgroundName)
         Next
+        For Each alignment In alignments
+            CmbBoxAlignmentSelect.Items.Add(alignment)
+        Next
     End Sub
 
     Private Sub BtnApplyClassRace_Click(sender As Object, e As EventArgs) Handles BtnApplyClassRace.Click
@@ -32,9 +36,7 @@ Public Class FrmCharacterCreatorMenu
             character.background = backgrounds(CmbBoxBackgroundSelect.SelectedIndex)
             FillSkillOptions()
             UpdateStats()
-            MessageBox.Show(JsonConvert.SerializeObject(character))
         Catch ex As Exception
-            MessageBox.Show(ex.ToString())
             MessageBox.Show("Select a class and a race before applying!")
         End Try
     End Sub
@@ -103,8 +105,18 @@ Public Class FrmCharacterCreatorMenu
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-        Dim characterFile As New StreamWriter(IO.File.Create("characters/goober.json"))
-        characterFile.WriteLine(JsonConvert.SerializeObject(character, Formatting.Indented))
-        characterFile.Close()
+        Try
+            character.FinishCreation()
+            Dim characterFile As New StreamWriter(IO.File.Create("characters/goober.json"))
+            characterFile.WriteLine(JsonConvert.SerializeObject(character, Formatting.Indented))
+            characterFile.Close()
+        Catch ex As Exception
+            MessageBox.Show("Creation incomplete!")
+        End Try
+    End Sub
+
+    Private Sub BtnApplyDetails_Click(sender As Object, e As EventArgs) Handles BtnApplyDetails.Click
+        character.name = TxtBoxName.Text
+        character.alignment = CmbBoxAlignmentSelect.Text
     End Sub
 End Class
