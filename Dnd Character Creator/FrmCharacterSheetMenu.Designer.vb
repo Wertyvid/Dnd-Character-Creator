@@ -24,6 +24,7 @@ Partial Class FrmCharacterSheetMenu
     Private Sub InitializeComponent()
         TabPgeFeatures = New TabPage()
         TblLayFeaturesMain = New TableLayoutPanel()
+        FlwLayFeatures = New FlowLayoutPanel()
         TabPgeSkills = New TabPage()
         TblLaySkillsMain = New TableLayoutPanel()
         TableLayoutPanel3 = New TableLayoutPanel()
@@ -69,7 +70,6 @@ Partial Class FrmCharacterSheetMenu
         StaInitiative = New StatIcon()
         StaAC = New StatIcon()
         TabLayMain = New TabControl()
-        FlwLayFeatures = New FlowLayoutPanel()
         TabPgeFeatures.SuspendLayout()
         TblLayFeaturesMain.SuspendLayout()
         TabPgeSkills.SuspendLayout()
@@ -109,6 +109,14 @@ Partial Class FrmCharacterSheetMenu
         TblLayFeaturesMain.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
         TblLayFeaturesMain.Size = New Size(1439, 648)
         TblLayFeaturesMain.TabIndex = 0
+        ' 
+        ' FlwLayFeatures
+        ' 
+        FlwLayFeatures.Dock = DockStyle.Fill
+        FlwLayFeatures.Location = New Point(722, 3)
+        FlwLayFeatures.Name = "FlwLayFeatures"
+        FlwLayFeatures.Size = New Size(714, 642)
+        FlwLayFeatures.TabIndex = 0
         ' 
         ' TabPgeSkills
         ' 
@@ -607,14 +615,6 @@ Partial Class FrmCharacterSheetMenu
         TabLayMain.SelectedIndex = 0
         TabLayMain.Size = New Size(1453, 682)
         TabLayMain.TabIndex = 0
-        ' 
-        ' FlwLayFeatures
-        ' 
-        FlwLayFeatures.Dock = DockStyle.Fill
-        FlwLayFeatures.Location = New Point(722, 3)
-        FlwLayFeatures.Name = "FlwLayFeatures"
-        FlwLayFeatures.Size = New Size(714, 642)
-        FlwLayFeatures.TabIndex = 0
         ' 
         ' FrmCharacterSheetMenu
         ' 
