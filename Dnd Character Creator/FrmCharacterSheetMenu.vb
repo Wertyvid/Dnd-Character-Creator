@@ -50,6 +50,16 @@
         StaBtnInt.ShowModifier(character.stats.GetModifierForSkill("Int"), character.stats.intelligence)
         StaBtnWis.ShowModifier(character.stats.GetModifierForSkill("Wis"), character.stats.wisdom)
         StaBtnCha.ShowModifier(character.stats.GetModifierForSkill("Cha"), character.stats.charisma)
+
+        Dim featureLabel As Label
+        For Each feature In character.features
+            featureLabel = New Label()
+            featureLabel.AutoSize = True
+            featureLabel.Text = feature
+            FlwLayFeatures.Controls.Add(featureLabel)
+            FlwLayFeatures.Controls.Add(New Label())
+        Next
+
     End Sub
 
     Public Sub SkillRoller_Roll(skill As String, proficient As Boolean)
@@ -67,4 +77,5 @@
         rollDetails = DiceRoller.DetailedStatRoll(character.stats.GetModifierForSkill(stat), 0, rnd)
         DiceRoller.DisplayRoll(rollDetails)
     End Sub
+
 End Class

@@ -22,29 +22,8 @@ Partial Class FrmCharacterSheetMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        TabLayMain = New TabControl()
-        TabPgeInfo = New TabPage()
-        TblLayInfo = New TableLayoutPanel()
-        TblLayInfoTop = New TableLayoutPanel()
-        LblInfoClass = New Label()
-        LblInfoBackground = New Label()
-        LblInfoRace = New Label()
-        LblInfoAlignment = New Label()
-        LblInfoName = New Label()
-        TableLayoutPanel1 = New TableLayoutPanel()
-        TblLayStats = New TableLayoutPanel()
-        StaModCon = New StatModifierIcon()
-        StaModDex = New StatModifierIcon()
-        StaModWis = New StatModifierIcon()
-        StaModCha = New StatModifierIcon()
-        StaModInt = New StatModifierIcon()
-        StaModStr = New StatModifierIcon()
-        TblLayMiscStats = New TableLayoutPanel()
-        StaHealth = New StatIcon()
-        StaProficiency = New StatIcon()
-        StaSpeed = New StatIcon()
-        StaInitiative = New StatIcon()
-        StaAC = New StatIcon()
+        TabPgeFeatures = New TabPage()
+        TblLayFeaturesMain = New TableLayoutPanel()
         TabPgeSkills = New TabPage()
         TblLaySkillsMain = New TableLayoutPanel()
         TableLayoutPanel3 = New TableLayoutPanel()
@@ -67,29 +46,294 @@ Partial Class FrmCharacterSheetMenu
         Panel10 = New Panel()
         Panel11 = New Panel()
         Panel12 = New Panel()
-        TabLayMain.SuspendLayout()
+        TabPgeInfo = New TabPage()
+        TblLayInfo = New TableLayoutPanel()
+        TblLayInfoTop = New TableLayoutPanel()
+        LblInfoClass = New Label()
+        LblInfoBackground = New Label()
+        LblInfoRace = New Label()
+        LblInfoAlignment = New Label()
+        LblInfoName = New Label()
+        TableLayoutPanel1 = New TableLayoutPanel()
+        TblLayStats = New TableLayoutPanel()
+        StaModCon = New StatModifierIcon()
+        StaModDex = New StatModifierIcon()
+        StaModWis = New StatModifierIcon()
+        StaModCha = New StatModifierIcon()
+        StaModInt = New StatModifierIcon()
+        StaModStr = New StatModifierIcon()
+        TblLayMiscStats = New TableLayoutPanel()
+        StaHealth = New StatIcon()
+        StaProficiency = New StatIcon()
+        StaSpeed = New StatIcon()
+        StaInitiative = New StatIcon()
+        StaAC = New StatIcon()
+        TabLayMain = New TabControl()
+        FlwLayFeatures = New FlowLayoutPanel()
+        TabPgeFeatures.SuspendLayout()
+        TblLayFeaturesMain.SuspendLayout()
+        TabPgeSkills.SuspendLayout()
+        TblLaySkillsMain.SuspendLayout()
+        TableLayoutPanel3.SuspendLayout()
+        TblLaySkillProficiencies.SuspendLayout()
         TabPgeInfo.SuspendLayout()
         TblLayInfo.SuspendLayout()
         TblLayInfoTop.SuspendLayout()
         TableLayoutPanel1.SuspendLayout()
         TblLayStats.SuspendLayout()
         TblLayMiscStats.SuspendLayout()
-        TabPgeSkills.SuspendLayout()
-        TblLaySkillsMain.SuspendLayout()
-        TableLayoutPanel3.SuspendLayout()
-        TblLaySkillProficiencies.SuspendLayout()
+        TabLayMain.SuspendLayout()
         SuspendLayout()
         ' 
-        ' TabLayMain
+        ' TabPgeFeatures
         ' 
-        TabLayMain.Controls.Add(TabPgeInfo)
-        TabLayMain.Controls.Add(TabPgeSkills)
-        TabLayMain.Dock = DockStyle.Fill
-        TabLayMain.Location = New Point(0, 0)
-        TabLayMain.Name = "TabLayMain"
-        TabLayMain.SelectedIndex = 0
-        TabLayMain.Size = New Size(1453, 682)
-        TabLayMain.TabIndex = 0
+        TabPgeFeatures.Controls.Add(TblLayFeaturesMain)
+        TabPgeFeatures.Location = New Point(4, 24)
+        TabPgeFeatures.Name = "TabPgeFeatures"
+        TabPgeFeatures.Padding = New Padding(3)
+        TabPgeFeatures.Size = New Size(1445, 654)
+        TabPgeFeatures.TabIndex = 2
+        TabPgeFeatures.Text = "Features"
+        TabPgeFeatures.UseVisualStyleBackColor = True
+        ' 
+        ' TblLayFeaturesMain
+        ' 
+        TblLayFeaturesMain.ColumnCount = 2
+        TblLayFeaturesMain.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TblLayFeaturesMain.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TblLayFeaturesMain.Controls.Add(FlwLayFeatures, 1, 0)
+        TblLayFeaturesMain.Dock = DockStyle.Fill
+        TblLayFeaturesMain.Location = New Point(3, 3)
+        TblLayFeaturesMain.Name = "TblLayFeaturesMain"
+        TblLayFeaturesMain.RowCount = 1
+        TblLayFeaturesMain.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TblLayFeaturesMain.Size = New Size(1439, 648)
+        TblLayFeaturesMain.TabIndex = 0
+        ' 
+        ' TabPgeSkills
+        ' 
+        TabPgeSkills.Controls.Add(TblLaySkillsMain)
+        TabPgeSkills.Location = New Point(4, 24)
+        TabPgeSkills.Name = "TabPgeSkills"
+        TabPgeSkills.Padding = New Padding(3)
+        TabPgeSkills.Size = New Size(192, 72)
+        TabPgeSkills.TabIndex = 1
+        TabPgeSkills.Text = "Skills"
+        TabPgeSkills.UseVisualStyleBackColor = True
+        ' 
+        ' TblLaySkillsMain
+        ' 
+        TblLaySkillsMain.ColumnCount = 3
+        TblLaySkillsMain.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TblLaySkillsMain.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 10F))
+        TblLaySkillsMain.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 40F))
+        TblLaySkillsMain.Controls.Add(TableLayoutPanel3, 1, 0)
+        TblLaySkillsMain.Controls.Add(TblLaySkillProficiencies, 0, 0)
+        TblLaySkillsMain.Dock = DockStyle.Fill
+        TblLaySkillsMain.Location = New Point(3, 3)
+        TblLaySkillsMain.Name = "TblLaySkillsMain"
+        TblLaySkillsMain.RowCount = 1
+        TblLaySkillsMain.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
+        TblLaySkillsMain.Size = New Size(186, 66)
+        TblLaySkillsMain.TabIndex = 0
+        ' 
+        ' TableLayoutPanel3
+        ' 
+        TableLayoutPanel3.ColumnCount = 1
+        TableLayoutPanel3.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
+        TableLayoutPanel3.ColumnStyles.Add(New ColumnStyle(SizeType.Absolute, 20F))
+        TableLayoutPanel3.Controls.Add(StaBtnStr, 0, 0)
+        TableLayoutPanel3.Controls.Add(StaBtnDex, 0, 1)
+        TableLayoutPanel3.Controls.Add(StaBtnCon, 0, 2)
+        TableLayoutPanel3.Controls.Add(StaBtnInt, 0, 3)
+        TableLayoutPanel3.Controls.Add(StaBtnWis, 0, 4)
+        TableLayoutPanel3.Controls.Add(StaBtnCha, 0, 5)
+        TableLayoutPanel3.Dock = DockStyle.Fill
+        TableLayoutPanel3.Location = New Point(96, 3)
+        TableLayoutPanel3.Name = "TableLayoutPanel3"
+        TableLayoutPanel3.RowCount = 6
+        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 14.2857141F))
+        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 14.2857141F))
+        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 14.2857141F))
+        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 14.2857141F))
+        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 14.2857141F))
+        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 14.2857141F))
+        TableLayoutPanel3.Size = New Size(12, 60)
+        TableLayoutPanel3.TabIndex = 4
+        ' 
+        ' StaBtnStr
+        ' 
+        StaBtnStr.Location = New Point(3, 3)
+        StaBtnStr.Name = "StaBtnStr"
+        StaBtnStr.Size = New Size(6, 3)
+        StaBtnStr.StatName = "Str"
+        StaBtnStr.TabIndex = 0
+        ' 
+        ' StaBtnDex
+        ' 
+        StaBtnDex.Location = New Point(3, 12)
+        StaBtnDex.Name = "StaBtnDex"
+        StaBtnDex.Size = New Size(6, 3)
+        StaBtnDex.StatName = "Dex"
+        StaBtnDex.TabIndex = 1
+        ' 
+        ' StaBtnCon
+        ' 
+        StaBtnCon.Location = New Point(3, 21)
+        StaBtnCon.Name = "StaBtnCon"
+        StaBtnCon.Size = New Size(6, 3)
+        StaBtnCon.StatName = "Con"
+        StaBtnCon.TabIndex = 2
+        ' 
+        ' StaBtnInt
+        ' 
+        StaBtnInt.Location = New Point(3, 30)
+        StaBtnInt.Name = "StaBtnInt"
+        StaBtnInt.Size = New Size(6, 3)
+        StaBtnInt.StatName = "Int"
+        StaBtnInt.TabIndex = 3
+        ' 
+        ' StaBtnWis
+        ' 
+        StaBtnWis.Location = New Point(3, 39)
+        StaBtnWis.Name = "StaBtnWis"
+        StaBtnWis.Size = New Size(6, 3)
+        StaBtnWis.StatName = "Wis"
+        StaBtnWis.TabIndex = 4
+        ' 
+        ' StaBtnCha
+        ' 
+        StaBtnCha.Location = New Point(3, 48)
+        StaBtnCha.Name = "StaBtnCha"
+        StaBtnCha.Size = New Size(6, 9)
+        StaBtnCha.StatName = "Cha"
+        StaBtnCha.TabIndex = 5
+        ' 
+        ' TblLaySkillProficiencies
+        ' 
+        TblLaySkillProficiencies.ColumnCount = 2
+        TblLaySkillProficiencies.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TblLaySkillProficiencies.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TblLaySkillProficiencies.Controls.Add(Panel1, 1, 6)
+        TblLaySkillProficiencies.Controls.Add(Panel2, 1, 7)
+        TblLaySkillProficiencies.Controls.Add(Panel3, 1, 8)
+        TblLaySkillProficiencies.Controls.Add(Panel4, 1, 9)
+        TblLaySkillProficiencies.Controls.Add(Panel5, 1, 10)
+        TblLaySkillProficiencies.Controls.Add(Panel6, 1, 11)
+        TblLaySkillProficiencies.Controls.Add(Panel7, 1, 12)
+        TblLaySkillProficiencies.Controls.Add(Panel8, 1, 13)
+        TblLaySkillProficiencies.Controls.Add(Panel9, 1, 14)
+        TblLaySkillProficiencies.Controls.Add(Panel10, 1, 15)
+        TblLaySkillProficiencies.Controls.Add(Panel11, 1, 16)
+        TblLaySkillProficiencies.Controls.Add(Panel12, 1, 17)
+        TblLaySkillProficiencies.Dock = DockStyle.Fill
+        TblLaySkillProficiencies.Location = New Point(3, 3)
+        TblLaySkillProficiencies.Name = "TblLaySkillProficiencies"
+        TblLaySkillProficiencies.RowCount = 18
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.16666746F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
+        TblLaySkillProficiencies.Size = New Size(87, 60)
+        TblLaySkillProficiencies.TabIndex = 0
+        ' 
+        ' Panel1
+        ' 
+        Panel1.Location = New Point(46, 21)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(38, 1)
+        Panel1.TabIndex = 0
+        ' 
+        ' Panel2
+        ' 
+        Panel2.Location = New Point(46, 24)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(38, 1)
+        Panel2.TabIndex = 1
+        ' 
+        ' Panel3
+        ' 
+        Panel3.Location = New Point(46, 27)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(38, 1)
+        Panel3.TabIndex = 2
+        ' 
+        ' Panel4
+        ' 
+        Panel4.Location = New Point(46, 30)
+        Panel4.Name = "Panel4"
+        Panel4.Size = New Size(38, 1)
+        Panel4.TabIndex = 3
+        ' 
+        ' Panel5
+        ' 
+        Panel5.Location = New Point(46, 33)
+        Panel5.Name = "Panel5"
+        Panel5.Size = New Size(38, 1)
+        Panel5.TabIndex = 4
+        ' 
+        ' Panel6
+        ' 
+        Panel6.Location = New Point(46, 36)
+        Panel6.Name = "Panel6"
+        Panel6.Size = New Size(38, 1)
+        Panel6.TabIndex = 5
+        ' 
+        ' Panel7
+        ' 
+        Panel7.Location = New Point(46, 39)
+        Panel7.Name = "Panel7"
+        Panel7.Size = New Size(38, 1)
+        Panel7.TabIndex = 6
+        ' 
+        ' Panel8
+        ' 
+        Panel8.Location = New Point(46, 42)
+        Panel8.Name = "Panel8"
+        Panel8.Size = New Size(38, 1)
+        Panel8.TabIndex = 7
+        ' 
+        ' Panel9
+        ' 
+        Panel9.Location = New Point(46, 45)
+        Panel9.Name = "Panel9"
+        Panel9.Size = New Size(38, 1)
+        Panel9.TabIndex = 8
+        ' 
+        ' Panel10
+        ' 
+        Panel10.Location = New Point(46, 48)
+        Panel10.Name = "Panel10"
+        Panel10.Size = New Size(38, 1)
+        Panel10.TabIndex = 9
+        ' 
+        ' Panel11
+        ' 
+        Panel11.Location = New Point(46, 51)
+        Panel11.Name = "Panel11"
+        Panel11.Size = New Size(38, 1)
+        Panel11.TabIndex = 10
+        ' 
+        ' Panel12
+        ' 
+        Panel12.Location = New Point(46, 54)
+        Panel12.Name = "Panel12"
+        Panel12.Size = New Size(38, 3)
+        Panel12.TabIndex = 11
         ' 
         ' TabPgeInfo
         ' 
@@ -352,230 +596,25 @@ Partial Class FrmCharacterSheetMenu
         StaAC.statName = "AC"
         StaAC.TabIndex = 1
         ' 
-        ' TabPgeSkills
+        ' TabLayMain
         ' 
-        TabPgeSkills.Controls.Add(TblLaySkillsMain)
-        TabPgeSkills.Location = New Point(4, 24)
-        TabPgeSkills.Name = "TabPgeSkills"
-        TabPgeSkills.Padding = New Padding(3)
-        TabPgeSkills.Size = New Size(1445, 654)
-        TabPgeSkills.TabIndex = 1
-        TabPgeSkills.Text = "Skills"
-        TabPgeSkills.UseVisualStyleBackColor = True
+        TabLayMain.Controls.Add(TabPgeInfo)
+        TabLayMain.Controls.Add(TabPgeSkills)
+        TabLayMain.Controls.Add(TabPgeFeatures)
+        TabLayMain.Dock = DockStyle.Fill
+        TabLayMain.Location = New Point(0, 0)
+        TabLayMain.Name = "TabLayMain"
+        TabLayMain.SelectedIndex = 0
+        TabLayMain.Size = New Size(1453, 682)
+        TabLayMain.TabIndex = 0
         ' 
-        ' TblLaySkillsMain
+        ' FlwLayFeatures
         ' 
-        TblLaySkillsMain.ColumnCount = 3
-        TblLaySkillsMain.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
-        TblLaySkillsMain.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 10F))
-        TblLaySkillsMain.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 40F))
-        TblLaySkillsMain.Controls.Add(TableLayoutPanel3, 1, 0)
-        TblLaySkillsMain.Controls.Add(TblLaySkillProficiencies, 0, 0)
-        TblLaySkillsMain.Dock = DockStyle.Fill
-        TblLaySkillsMain.Location = New Point(3, 3)
-        TblLaySkillsMain.Name = "TblLaySkillsMain"
-        TblLaySkillsMain.RowCount = 1
-        TblLaySkillsMain.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
-        TblLaySkillsMain.Size = New Size(1439, 648)
-        TblLaySkillsMain.TabIndex = 0
-        ' 
-        ' TableLayoutPanel3
-        ' 
-        TableLayoutPanel3.ColumnCount = 1
-        TableLayoutPanel3.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
-        TableLayoutPanel3.ColumnStyles.Add(New ColumnStyle(SizeType.Absolute, 20F))
-        TableLayoutPanel3.Controls.Add(StaBtnStr, 0, 0)
-        TableLayoutPanel3.Controls.Add(StaBtnDex, 0, 1)
-        TableLayoutPanel3.Controls.Add(StaBtnCon, 0, 2)
-        TableLayoutPanel3.Controls.Add(StaBtnInt, 0, 3)
-        TableLayoutPanel3.Controls.Add(StaBtnWis, 0, 4)
-        TableLayoutPanel3.Controls.Add(StaBtnCha, 0, 5)
-        TableLayoutPanel3.Dock = DockStyle.Fill
-        TableLayoutPanel3.Location = New Point(722, 3)
-        TableLayoutPanel3.Name = "TableLayoutPanel3"
-        TableLayoutPanel3.RowCount = 6
-        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 14.2857141F))
-        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 14.2857141F))
-        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 14.2857141F))
-        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 14.2857141F))
-        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 14.2857141F))
-        TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 14.2857141F))
-        TableLayoutPanel3.Size = New Size(137, 642)
-        TableLayoutPanel3.TabIndex = 4
-        ' 
-        ' StaBtnStr
-        ' 
-        StaBtnStr.Location = New Point(3, 3)
-        StaBtnStr.Name = "StaBtnStr"
-        StaBtnStr.Size = New Size(131, 97)
-        StaBtnStr.StatName = "Str"
-        StaBtnStr.TabIndex = 0
-        ' 
-        ' StaBtnDex
-        ' 
-        StaBtnDex.Location = New Point(3, 110)
-        StaBtnDex.Name = "StaBtnDex"
-        StaBtnDex.Size = New Size(131, 97)
-        StaBtnDex.StatName = "Dex"
-        StaBtnDex.TabIndex = 1
-        ' 
-        ' StaBtnCon
-        ' 
-        StaBtnCon.Location = New Point(3, 217)
-        StaBtnCon.Name = "StaBtnCon"
-        StaBtnCon.Size = New Size(131, 97)
-        StaBtnCon.StatName = "Con"
-        StaBtnCon.TabIndex = 2
-        ' 
-        ' StaBtnInt
-        ' 
-        StaBtnInt.Location = New Point(3, 324)
-        StaBtnInt.Name = "StaBtnInt"
-        StaBtnInt.Size = New Size(131, 97)
-        StaBtnInt.StatName = "Int"
-        StaBtnInt.TabIndex = 3
-        ' 
-        ' StaBtnWis
-        ' 
-        StaBtnWis.Location = New Point(3, 431)
-        StaBtnWis.Name = "StaBtnWis"
-        StaBtnWis.Size = New Size(131, 97)
-        StaBtnWis.StatName = "Wis"
-        StaBtnWis.TabIndex = 4
-        ' 
-        ' StaBtnCha
-        ' 
-        StaBtnCha.Location = New Point(3, 538)
-        StaBtnCha.Name = "StaBtnCha"
-        StaBtnCha.Size = New Size(131, 97)
-        StaBtnCha.StatName = "Cha"
-        StaBtnCha.TabIndex = 5
-        ' 
-        ' TblLaySkillProficiencies
-        ' 
-        TblLaySkillProficiencies.ColumnCount = 2
-        TblLaySkillProficiencies.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
-        TblLaySkillProficiencies.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
-        TblLaySkillProficiencies.Controls.Add(Panel1, 1, 6)
-        TblLaySkillProficiencies.Controls.Add(Panel2, 1, 7)
-        TblLaySkillProficiencies.Controls.Add(Panel3, 1, 8)
-        TblLaySkillProficiencies.Controls.Add(Panel4, 1, 9)
-        TblLaySkillProficiencies.Controls.Add(Panel5, 1, 10)
-        TblLaySkillProficiencies.Controls.Add(Panel6, 1, 11)
-        TblLaySkillProficiencies.Controls.Add(Panel7, 1, 12)
-        TblLaySkillProficiencies.Controls.Add(Panel8, 1, 13)
-        TblLaySkillProficiencies.Controls.Add(Panel9, 1, 14)
-        TblLaySkillProficiencies.Controls.Add(Panel10, 1, 15)
-        TblLaySkillProficiencies.Controls.Add(Panel11, 1, 16)
-        TblLaySkillProficiencies.Controls.Add(Panel12, 1, 17)
-        TblLaySkillProficiencies.Dock = DockStyle.Fill
-        TblLaySkillProficiencies.Location = New Point(3, 3)
-        TblLaySkillProficiencies.Name = "TblLaySkillProficiencies"
-        TblLaySkillProficiencies.RowCount = 18
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.16666746F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.Size = New Size(713, 642)
-        TblLaySkillProficiencies.TabIndex = 0
-        ' 
-        ' Panel1
-        ' 
-        Panel1.Location = New Point(359, 213)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(200, 28)
-        Panel1.TabIndex = 0
-        ' 
-        ' Panel2
-        ' 
-        Panel2.Location = New Point(359, 248)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(200, 28)
-        Panel2.TabIndex = 1
-        ' 
-        ' Panel3
-        ' 
-        Panel3.Location = New Point(359, 283)
-        Panel3.Name = "Panel3"
-        Panel3.Size = New Size(200, 28)
-        Panel3.TabIndex = 2
-        ' 
-        ' Panel4
-        ' 
-        Panel4.Location = New Point(359, 318)
-        Panel4.Name = "Panel4"
-        Panel4.Size = New Size(200, 28)
-        Panel4.TabIndex = 3
-        ' 
-        ' Panel5
-        ' 
-        Panel5.Location = New Point(359, 353)
-        Panel5.Name = "Panel5"
-        Panel5.Size = New Size(200, 28)
-        Panel5.TabIndex = 4
-        ' 
-        ' Panel6
-        ' 
-        Panel6.Location = New Point(359, 388)
-        Panel6.Name = "Panel6"
-        Panel6.Size = New Size(200, 28)
-        Panel6.TabIndex = 5
-        ' 
-        ' Panel7
-        ' 
-        Panel7.Location = New Point(359, 423)
-        Panel7.Name = "Panel7"
-        Panel7.Size = New Size(200, 28)
-        Panel7.TabIndex = 6
-        ' 
-        ' Panel8
-        ' 
-        Panel8.Location = New Point(359, 458)
-        Panel8.Name = "Panel8"
-        Panel8.Size = New Size(200, 28)
-        Panel8.TabIndex = 7
-        ' 
-        ' Panel9
-        ' 
-        Panel9.Location = New Point(359, 493)
-        Panel9.Name = "Panel9"
-        Panel9.Size = New Size(200, 28)
-        Panel9.TabIndex = 8
-        ' 
-        ' Panel10
-        ' 
-        Panel10.Location = New Point(359, 528)
-        Panel10.Name = "Panel10"
-        Panel10.Size = New Size(200, 28)
-        Panel10.TabIndex = 9
-        ' 
-        ' Panel11
-        ' 
-        Panel11.Location = New Point(359, 563)
-        Panel11.Name = "Panel11"
-        Panel11.Size = New Size(200, 28)
-        Panel11.TabIndex = 10
-        ' 
-        ' Panel12
-        ' 
-        Panel12.Location = New Point(359, 598)
-        Panel12.Name = "Panel12"
-        Panel12.Size = New Size(200, 34)
-        Panel12.TabIndex = 11
+        FlwLayFeatures.Dock = DockStyle.Fill
+        FlwLayFeatures.Location = New Point(722, 3)
+        FlwLayFeatures.Name = "FlwLayFeatures"
+        FlwLayFeatures.Size = New Size(714, 642)
+        FlwLayFeatures.TabIndex = 0
         ' 
         ' FrmCharacterSheetMenu
         ' 
@@ -585,7 +624,12 @@ Partial Class FrmCharacterSheetMenu
         Controls.Add(TabLayMain)
         Name = "FrmCharacterSheetMenu"
         Text = "FrmCharacterSheetMenu"
-        TabLayMain.ResumeLayout(False)
+        TabPgeFeatures.ResumeLayout(False)
+        TblLayFeaturesMain.ResumeLayout(False)
+        TabPgeSkills.ResumeLayout(False)
+        TblLaySkillsMain.ResumeLayout(False)
+        TableLayoutPanel3.ResumeLayout(False)
+        TblLaySkillProficiencies.ResumeLayout(False)
         TabPgeInfo.ResumeLayout(False)
         TblLayInfo.ResumeLayout(False)
         TblLayInfoTop.ResumeLayout(False)
@@ -593,16 +637,35 @@ Partial Class FrmCharacterSheetMenu
         TableLayoutPanel1.ResumeLayout(False)
         TblLayStats.ResumeLayout(False)
         TblLayMiscStats.ResumeLayout(False)
-        TabPgeSkills.ResumeLayout(False)
-        TblLaySkillsMain.ResumeLayout(False)
-        TableLayoutPanel3.ResumeLayout(False)
-        TblLaySkillProficiencies.ResumeLayout(False)
+        TabLayMain.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents TabLayMain As TabControl
-    Friend WithEvents TabPgeInfo As TabPage
+    Friend WithEvents TabPgeFeatures As TabPage
+    Friend WithEvents TblLayFeaturesMain As TableLayoutPanel
     Friend WithEvents TabPgeSkills As TabPage
+    Friend WithEvents TblLaySkillsMain As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents StaBtnStr As RollableStatButton
+    Friend WithEvents StaBtnDex As RollableStatButton
+    Friend WithEvents StaBtnCon As RollableStatButton
+    Friend WithEvents StaBtnInt As RollableStatButton
+    Friend WithEvents StaBtnWis As RollableStatButton
+    Friend WithEvents StaBtnCha As RollableStatButton
+    Friend WithEvents TblLaySkillProficiencies As TableLayoutPanel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents TabPgeInfo As TabPage
     Friend WithEvents TblLayInfo As TableLayoutPanel
     Friend WithEvents TblLayInfoTop As TableLayoutPanel
     Friend WithEvents LblInfoClass As Label
@@ -619,30 +682,11 @@ Partial Class FrmCharacterSheetMenu
     Friend WithEvents StaModInt As StatModifierIcon
     Friend WithEvents StaModStr As StatModifierIcon
     Friend WithEvents TblLayMiscStats As TableLayoutPanel
+    Friend WithEvents StaHealth As StatIcon
     Friend WithEvents StaProficiency As StatIcon
     Friend WithEvents StaSpeed As StatIcon
     Friend WithEvents StaInitiative As StatIcon
     Friend WithEvents StaAC As StatIcon
-    Friend WithEvents TblLaySkillsMain As TableLayoutPanel
-    Friend WithEvents TblLaySkillProficiencies As TableLayoutPanel
-    Friend WithEvents StaHealth As StatIcon
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Panel7 As Panel
-    Friend WithEvents Panel8 As Panel
-    Friend WithEvents Panel9 As Panel
-    Friend WithEvents Panel10 As Panel
-    Friend WithEvents Panel11 As Panel
-    Friend WithEvents Panel12 As Panel
-    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents StaBtnStr As RollableStatButton
-    Friend WithEvents StaBtnDex As RollableStatButton
-    Friend WithEvents StaBtnCon As RollableStatButton
-    Friend WithEvents StaBtnInt As RollableStatButton
-    Friend WithEvents StaBtnWis As RollableStatButton
-    Friend WithEvents StaBtnCha As RollableStatButton
+    Friend WithEvents TabLayMain As TabControl
+    Friend WithEvents FlwLayFeatures As FlowLayoutPanel
 End Class
