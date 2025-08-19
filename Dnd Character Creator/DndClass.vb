@@ -19,6 +19,10 @@ Public Class Race
 End Class
 
 Public Class Stats
+    Private statSkillAssociations As Dictionary(Of String, String) = New Dictionary(Of String, String) From {{"Acrobatics", "Dex"}, {"Animal Handling", "Wis"}, {"Arcana", "Int"}, {"Athletics", "Str"}, {"Deception", "Cha"}, {"History", "Int"},
+        {"Insight", "Wis"}, {"Intimidation", "Cha"}, {"Investigation", "Int"}, {"Medicine", "Wis"}, {"Nature", "Int"}, {"Perception", "Wis"}, {"Performance", "Cha"}, {"Persuasion", "Cha"}, {"Religion", "Int"}, {"Sleight Of Hand", "Dex"},
+        {"Stealth", "Dex"}, {"Survival", "Wis"}}
+
     Public strength As Integer = 0
     Public dexterity As Integer = 0
     Public consititution As Integer = 0
@@ -34,6 +38,30 @@ Public Class Stats
         wisdom += statBoost.wisdom
         charisma += statBoost.charisma
     End Sub
+
+    Shared Function GetModifierFromScore(score As Integer) As Integer
+        Return Math.Floor((score - 10.0) / 2.0)
+    End Function
+
+    Public Function GetModifierForSkill(skillName As String) As Integer
+        Dim skillStat As String = statSkillAssociations(skillName)
+        Select Case skillStat
+            Case "Str"
+                Return Stats.GetModifierFromScore(strength)
+            Case "Dex"
+                Return Stats.GetModifierFromScore(dexterity)
+            Case "Con"
+                Return Stats.GetModifierFromScore(consititution)
+            Case "Int"
+                Return Stats.GetModifierFromScore(intelligence)
+            Case "Wis"
+                Return Stats.GetModifierFromScore(wisdom)
+            Case "Cha"
+                Return Stats.GetModifierFromScore(charisma)
+            Case Else
+                Return 0
+        End Select
+    End Function
 End Class
 
 Public Class Skills
@@ -63,9 +91,7 @@ Public Class Skills
     Public saveWis As Boolean = False
     Public saveCha As Boolean = False
 
-    Sub New()
 
-    End Sub
 
     Sub New(selectionsPanel As FlowLayoutPanel, selectedClass As DndClass, selectedBackground As Background)
         Dim duplicateSkill As Boolean = False
@@ -85,6 +111,10 @@ Public Class Skills
         If duplicateSkill Then
             MessageBox.Show("You have a duplicate selected skill! You could have more proficiencies if you select unique skills.")
         End If
+    End Sub
+
+    Sub New()
+        'Important!!!!
     End Sub
 
     Function AddSkill(skillName As String) As Boolean
@@ -197,15 +227,10 @@ Public Class Skills
         Return isDuplicateSkill
     End Function
 
-    Public Function GetSkillsValuesAsArray() As Boolean()
-        Dim skillArray As Boolean() = {acrobatics, animalHandling, arcana, athletics, deception, history, insight, intimidation,
-            investigation, medicine, nature, perception, performance, persuasion, religion, sleightOfHand, stealth, survival}
-        Return skillArray
-    End Function
-
-    Shared Function GetSkillNamesAsArray()
-        Return {"Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Inditimation",
-            "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight Of Hand", "Stealth", "Survival"}
+    Public Function GetSkillsValuesAsDict() As Dictionary(Of String, Boolean)
+        Dim skillDict As Dictionary(Of String, Boolean) = New Dictionary(Of String, Boolean) From {{"Acrobatics", acrobatics}, {"Animal Handling", animalHandling}, {"Arcana", arcana}, {"Athletics", athletics}, {"Deception", deception}, {"History", history}, {"Insight", insight}, {"Intimidation", intimidation},
+            {"Investigation", investigation}, {"Medicine", medicine}, {"Nature", nature}, {"Perception", perception}, {"Performance", performance}, {"Persuasion", persuasion}, {"Religion", religion}, {"Sleight Of Hand", sleightOfHand}, {"Stealth", stealth}, {"Survival", survival}}
+        Return skillDict
     End Function
 End Class
 
@@ -239,15 +264,35 @@ Public Class Character
             features.Add(feature)
         Next
         features.Add(background.feature)
-        maxHp = dndClass.hitDiceSize + GetModifierFromScore(stats.consititution)
-        armourClass = 10 + GetModifierFromScore(stats.dexterity)
-        initiative = 10 + GetModifierFromScore(stats.dexterity)
+        maxHp = dndClass.hitDiceSize + Stats.GetModifierFromScore(stats.consititution)
+        armourClass = 10 + Stats.GetModifierFromScore(stats.dexterity)
+        initiative = 10 + Stats.GetModifierFromScore(stats.dexterity)
         proficiencyBonus = 2
 
     End Sub
 
-    Private Function GetModifierFromScore(score As Integer) As Integer
-        Return Math.Floor((score - 10.0) / 2.0)
-    End Function
+
 End Class
 
+Public Class DiceRoller
+
+    Shared Function RollDice(rnd As Random, Optional dX As Integer = 20)
+        Return rnd.Next(1, dX + 1)
+    End Function
+    Shared Function DetailedSkillRoll(skillModifier As Integer, proficiencyModifier As Integer, extraModifier As Integer, rnd As Random) As String
+        Dim rollResult As Integer
+        Dim rawRollResult As Integer
+        Dim rollDetails As String = ""
+        For r As Integer = 0 To 1
+            rawRollResult = RollDice(rnd)
+            rollResult = rawRollResult + skillModifier + proficiencyModifier + extraModifier
+            rollDetails = rollDetails & $"{rollResult.ToString()} = {rawRollResult} + {skillModifier} + {proficiencyModifier} + {extraModifier}{vbCrLf}"
+        Next
+        Return rollDetails
+    End Function
+
+    Shared Sub DisplayRoll(rollDetails As String)
+        MessageBox.Show(rollDetails, "Roll Result!")
+    End Sub
+
+End Class

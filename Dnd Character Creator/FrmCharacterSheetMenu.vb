@@ -1,5 +1,6 @@
 ﻿Public Class FrmCharacterSheetMenu
     Dim character As Character
+    Dim rnd As New Random
 
     Sub New(setCharacter As Character)
 
@@ -21,6 +22,7 @@
         StaInitiative.SetValue(character.initiative.ToString())
         StaSpeed.SetValue("30ft")
         StaProficiency.SetValue(character.proficiencyBonus.ToString())
+        StaHealth.SetValue(character.maxHp.ToString())
 
         StaModStr.SetValue(character.stats.strength)
         StaModDex.SetValue(character.stats.dexterity)
@@ -28,5 +30,23 @@
         StaModInt.SetValue(character.stats.intelligence)
         StaModWis.SetValue(character.stats.wisdom)
         StaModCha.SetValue(character.stats.charisma)
+
+        Dim skillDict As Dictionary(Of String, Boolean) = character.skills.GetSkillsValuesAsDict()
+        Dim skillRoller As SkillRollButton
+        For Each skillName In skillDict.Keys
+            skillRoller = New SkillRollButton(skillName, skillDict(skillName))
+            AddHandler skillRoller.Roll, AddressOf SkillRoller_Roll
+            TblLaySkillProficiencies.Controls.Add(skillRoller)
+        Next
+    End Sub
+
+    Public Sub SkillRoller_Roll(skill As String, proficient As Boolean)
+        Dim rollDetails As String
+        Dim profMod As Integer = 0
+        If proficient Then
+            profMod = character.proficiencyBonus
+        End If
+        rollDetails = DiceRoller.DetailedSkillRoll(character.stats.GetModifierForSkill(skill), profMod, 0, rnd)
+        DiceRoller.DisplayRoll(rollDetails)
     End Sub
 End Class
