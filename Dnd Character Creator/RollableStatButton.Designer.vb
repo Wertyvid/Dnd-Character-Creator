@@ -24,22 +24,26 @@ Partial Class RollableStatButton
     Private Sub InitializeComponent()
         TableLayoutPanel1 = New TableLayoutPanel()
         BtnSkill = New Button()
+        LblModifier = New Label()
+        LblStatName = New Label()
         TableLayoutPanel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' TableLayoutPanel1
         ' 
         TableLayoutPanel1.ColumnCount = 1
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 100F))
         TableLayoutPanel1.Controls.Add(BtnSkill, 0, 0)
+        TableLayoutPanel1.Controls.Add(LblModifier, 0, 1)
+        TableLayoutPanel1.Controls.Add(LblStatName, 0, 2)
         TableLayoutPanel1.Dock = DockStyle.Fill
         TableLayoutPanel1.Location = New Point(0, 0)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 3
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Absolute, 20F))
-        TableLayoutPanel1.Size = New Size(209, 197)
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 60F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel1.Size = New Size(150, 150)
         TableLayoutPanel1.TabIndex = 0
         ' 
         ' BtnSkill
@@ -47,10 +51,32 @@ Partial Class RollableStatButton
         BtnSkill.Dock = DockStyle.Fill
         BtnSkill.Location = New Point(3, 3)
         BtnSkill.Name = "BtnSkill"
-        BtnSkill.Size = New Size(203, 151)
+        BtnSkill.Size = New Size(144, 84)
         BtnSkill.TabIndex = 0
         BtnSkill.Text = "Button1"
         BtnSkill.UseVisualStyleBackColor = True
+        ' 
+        ' LblModifier
+        ' 
+        LblModifier.AutoSize = True
+        LblModifier.Dock = DockStyle.Fill
+        LblModifier.Location = New Point(3, 90)
+        LblModifier.Name = "LblModifier"
+        LblModifier.Size = New Size(144, 30)
+        LblModifier.TabIndex = 1
+        LblModifier.Text = "Label1"
+        LblModifier.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' LblStatName
+        ' 
+        LblStatName.AutoSize = True
+        LblStatName.Dock = DockStyle.Fill
+        LblStatName.Location = New Point(3, 120)
+        LblStatName.Name = "LblStatName"
+        LblStatName.Size = New Size(144, 30)
+        LblStatName.TabIndex = 2
+        LblStatName.Text = "Label1"
+        LblStatName.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' RollableStatButton
         ' 
@@ -58,12 +84,14 @@ Partial Class RollableStatButton
         AutoScaleMode = AutoScaleMode.Font
         Controls.Add(TableLayoutPanel1)
         Name = "RollableStatButton"
-        Size = New Size(209, 197)
         TableLayoutPanel1.ResumeLayout(False)
+        TableLayoutPanel1.PerformLayout()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents BtnSkill As Button
+    Friend WithEvents LblModifier As Label
+    Friend WithEvents LblStatName As Label
 
 End Class

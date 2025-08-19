@@ -43,9 +43,13 @@
             AddHandler skillRoller.Roll, AddressOf SkillRoller_Roll
             TblLaySkillProficiencies.Controls.Add(skillRoller)
         Next
-        For Each skill In {"Str", "Dex", "Con", "Int", "Wis", "Cha"}
 
-        Next
+        StaBtnStr.ShowModifier(character.stats.GetModifierForSkill("Str"), character.stats.strength)
+        StaBtnDex.ShowModifier(character.stats.GetModifierForSkill("Dex"), character.stats.dexterity)
+        StaBtnCon.ShowModifier(character.stats.GetModifierForSkill("Con"), character.stats.consititution)
+        StaBtnInt.ShowModifier(character.stats.GetModifierForSkill("Int"), character.stats.intelligence)
+        StaBtnWis.ShowModifier(character.stats.GetModifierForSkill("Wis"), character.stats.wisdom)
+        StaBtnCha.ShowModifier(character.stats.GetModifierForSkill("Cha"), character.stats.charisma)
     End Sub
 
     Public Sub SkillRoller_Roll(skill As String, proficient As Boolean)
@@ -55,6 +59,12 @@
             profMod = character.proficiencyBonus
         End If
         rollDetails = DiceRoller.DetailedSkillRoll(character.stats.GetModifierForSkill(skill), profMod, 0, rnd)
+        DiceRoller.DisplayRoll(rollDetails)
+    End Sub
+
+    Public Sub StatRoller_Roll(stat As String) Handles StaBtnStr.Roll, StaBtnDex.Roll, StaBtnCon.Roll, StaBtnInt.Roll, StaBtnWis.Roll, StaBtnCha.Roll
+        Dim rollDetails As String
+        rollDetails = DiceRoller.DetailedStatRoll(character.stats.GetModifierForSkill(stat), 0, rnd)
         DiceRoller.DisplayRoll(rollDetails)
     End Sub
 End Class

@@ -296,6 +296,18 @@ Public Class DiceRoller
         Return rollDetails
     End Function
 
+    Shared Function DetailedStatRoll(statModifier As Integer, extraModifier As Integer, rnd As Random)
+        Dim rollResult As Integer
+        Dim rawRollResult As Integer
+        Dim rollDetails As String = ""
+        For r As Integer = 0 To 1
+            rawRollResult = RollDice(rnd)
+            rollResult = rawRollResult + statModifier + extraModifier
+            rollDetails = rollDetails & $"{rollResult.ToString()} = {rawRollResult} + {statModifier} + {extraModifier}{vbCrLf}"
+        Next
+        Return rollDetails
+    End Function
+
     Shared Sub DisplayRoll(rollDetails As String)
         MessageBox.Show(rollDetails, "Roll Result!")
     End Sub
