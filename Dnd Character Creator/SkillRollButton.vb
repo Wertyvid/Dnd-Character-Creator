@@ -4,7 +4,7 @@
 
     Event Roll(skill As String, proficient As Boolean)
 
-    Sub New(setSkillName As String, setProficient As Boolean)
+    Sub New(setSkillName As String, setProficient As Boolean, modifier As Integer)
 
         ' This call is required by the designer.
         InitializeComponent()
@@ -14,6 +14,7 @@
         proficient = setProficient
         BtnRollSkill.Text = skillName
         ChkProficient.Checked = proficient
+        ChkProficient.Text = modifier.ToString()
     End Sub
 
     Private Sub BtnRollSkill_Click(sender As Object, e As EventArgs) Handles BtnRollSkill.Click

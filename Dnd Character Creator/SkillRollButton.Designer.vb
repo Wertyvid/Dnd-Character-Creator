@@ -31,8 +31,8 @@ Partial Class SkillRollButton
         ' TableLayoutPanel1
         ' 
         TableLayoutPanel1.ColumnCount = 2
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 11.1111107F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 88.8888855F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 14.2857141F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 85.71429F))
         TableLayoutPanel1.Controls.Add(BtnRollSkill, 1, 0)
         TableLayoutPanel1.Controls.Add(ChkProficient, 0, 0)
         TableLayoutPanel1.Dock = DockStyle.Fill
@@ -46,9 +46,9 @@ Partial Class SkillRollButton
         ' BtnRollSkill
         ' 
         BtnRollSkill.Dock = DockStyle.Fill
-        BtnRollSkill.Location = New Point(71, 3)
+        BtnRollSkill.Location = New Point(91, 3)
         BtnRollSkill.Name = "BtnRollSkill"
-        BtnRollSkill.Size = New Size(547, 44)
+        BtnRollSkill.Size = New Size(527, 44)
         BtnRollSkill.TabIndex = 0
         BtnRollSkill.Text = "Button1"
         BtnRollSkill.UseVisualStyleBackColor = True
@@ -60,7 +60,7 @@ Partial Class SkillRollButton
         ChkProficient.Enabled = False
         ChkProficient.Location = New Point(3, 3)
         ChkProficient.Name = "ChkProficient"
-        ChkProficient.Size = New Size(62, 44)
+        ChkProficient.Size = New Size(82, 44)
         ChkProficient.TabIndex = 1
         ChkProficient.TextAlign = ContentAlignment.MiddleCenter
         ChkProficient.UseVisualStyleBackColor = True

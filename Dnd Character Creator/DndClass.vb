@@ -44,7 +44,12 @@ Public Class Stats
     End Function
 
     Public Function GetModifierForSkill(skillName As String) As Integer
-        Dim skillStat As String = statSkillAssociations(skillName)
+        Dim skillStat As String
+        If {"Str", "Dex", "Con", "Int", "Wis", "Cha"}.Contains(skillName) Then
+            skillStat = skillName
+        Else
+            skillStat = statSkillAssociations(skillName)
+        End If
         Select Case skillStat
             Case "Str"
                 Return Stats.GetModifierFromScore(strength)
@@ -228,7 +233,7 @@ Public Class Skills
     End Function
 
     Public Function GetSkillsValuesAsDict() As Dictionary(Of String, Boolean)
-        Dim skillDict As Dictionary(Of String, Boolean) = New Dictionary(Of String, Boolean) From {{"Acrobatics", acrobatics}, {"Animal Handling", animalHandling}, {"Arcana", arcana}, {"Athletics", athletics}, {"Deception", deception}, {"History", history}, {"Insight", insight}, {"Intimidation", intimidation},
+        Dim skillDict As Dictionary(Of String, Boolean) = New Dictionary(Of String, Boolean) From {{"Acrobatics", acrobatics}, {"Str", saveStr}, {"Animal Handling", animalHandling}, {"Dex", saveDex}, {"Arcana", arcana}, {"Con", saveCon}, {"Athletics", athletics}, {"Int", saveInt}, {"Deception", deception}, {"Wis", saveWis}, {"History", history}, {"Cha", saveCha}, {"Insight", insight}, {"Intimidation", intimidation},
             {"Investigation", investigation}, {"Medicine", medicine}, {"Nature", nature}, {"Perception", perception}, {"Performance", performance}, {"Persuasion", persuasion}, {"Religion", religion}, {"Sleight Of Hand", sleightOfHand}, {"Stealth", stealth}, {"Survival", survival}}
         Return skillDict
     End Function

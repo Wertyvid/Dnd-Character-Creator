@@ -33,10 +33,18 @@
 
         Dim skillDict As Dictionary(Of String, Boolean) = character.skills.GetSkillsValuesAsDict()
         Dim skillRoller As SkillRollButton
+        Dim skillMod As Integer
         For Each skillName In skillDict.Keys
-            skillRoller = New SkillRollButton(skillName, skillDict(skillName))
+            skillMod = character.stats.GetModifierForSkill(skillName)
+            If skillDict(skillName) Then
+                skillMod += character.proficiencyBonus
+            End If
+            skillRoller = New SkillRollButton(skillName, skillDict(skillName), skillMod)
             AddHandler skillRoller.Roll, AddressOf SkillRoller_Roll
             TblLaySkillProficiencies.Controls.Add(skillRoller)
+        Next
+        For Each skill In {"Str", "Dex", "Con", "Int", "Wis", "Cha"}
+
         Next
     End Sub
 
