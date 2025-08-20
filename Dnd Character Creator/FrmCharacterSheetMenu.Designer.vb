@@ -24,7 +24,7 @@ Partial Class FrmCharacterSheetMenu
     Private Sub InitializeComponent()
         TabPgeFeatures = New TabPage()
         TblLayFeaturesMain = New TableLayoutPanel()
-        FlwLayFeatures = New FlowLayoutPanel()
+        TxtBoxFeatures = New TextBox()
         TabPgeSkills = New TabPage()
         TblLaySkillsMain = New TableLayoutPanel()
         TableLayoutPanel3 = New TableLayoutPanel()
@@ -70,6 +70,25 @@ Partial Class FrmCharacterSheetMenu
         StaInitiative = New StatIcon()
         StaAC = New StatIcon()
         TabLayMain = New TabControl()
+        TabPgeHealth = New TabPage()
+        TblLayHealthMain = New TableLayoutPanel()
+        TableLayoutPanel4 = New TableLayoutPanel()
+        TblLayHealthPoints = New TableLayoutPanel()
+        Label1 = New Label()
+        SpnBoxHealth = New NumericUpDown()
+        LblHealthMax = New Label()
+        SpnBoxHealthMod = New NumericUpDown()
+        Label3 = New Label()
+        BtnApplyHealthModify = New Button()
+        TableLayoutPanel2 = New TableLayoutPanel()
+        SpnBoxTempHp = New NumericUpDown()
+        Label2 = New Label()
+        TblLayDeathSaves = New TableLayoutPanel()
+        Label5 = New Label()
+        ChkListsDeathSavesN = New CheckedListBox()
+        ChkLstDeathSavesN = New CheckedListBox()
+        Label4 = New Label()
+        ChkListConditions = New CheckedListBox()
         TabPgeFeatures.SuspendLayout()
         TblLayFeaturesMain.SuspendLayout()
         TabPgeSkills.SuspendLayout()
@@ -83,6 +102,15 @@ Partial Class FrmCharacterSheetMenu
         TblLayStats.SuspendLayout()
         TblLayMiscStats.SuspendLayout()
         TabLayMain.SuspendLayout()
+        TabPgeHealth.SuspendLayout()
+        TblLayHealthMain.SuspendLayout()
+        TableLayoutPanel4.SuspendLayout()
+        TblLayHealthPoints.SuspendLayout()
+        CType(SpnBoxHealth, ComponentModel.ISupportInitialize).BeginInit()
+        CType(SpnBoxHealthMod, ComponentModel.ISupportInitialize).BeginInit()
+        TableLayoutPanel2.SuspendLayout()
+        CType(SpnBoxTempHp, ComponentModel.ISupportInitialize).BeginInit()
+        TblLayDeathSaves.SuspendLayout()
         SuspendLayout()
         ' 
         ' TabPgeFeatures
@@ -91,32 +119,34 @@ Partial Class FrmCharacterSheetMenu
         TabPgeFeatures.Location = New Point(4, 24)
         TabPgeFeatures.Name = "TabPgeFeatures"
         TabPgeFeatures.Padding = New Padding(3)
-        TabPgeFeatures.Size = New Size(1445, 654)
+        TabPgeFeatures.Size = New Size(192, 72)
         TabPgeFeatures.TabIndex = 2
         TabPgeFeatures.Text = "Features"
         TabPgeFeatures.UseVisualStyleBackColor = True
         ' 
         ' TblLayFeaturesMain
         ' 
-        TblLayFeaturesMain.ColumnCount = 2
+        TblLayFeaturesMain.ColumnCount = 1
         TblLayFeaturesMain.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
-        TblLayFeaturesMain.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
-        TblLayFeaturesMain.Controls.Add(FlwLayFeatures, 1, 0)
+        TblLayFeaturesMain.Controls.Add(TxtBoxFeatures, 0, 0)
         TblLayFeaturesMain.Dock = DockStyle.Fill
         TblLayFeaturesMain.Location = New Point(3, 3)
         TblLayFeaturesMain.Name = "TblLayFeaturesMain"
         TblLayFeaturesMain.RowCount = 1
         TblLayFeaturesMain.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TblLayFeaturesMain.Size = New Size(1439, 648)
+        TblLayFeaturesMain.Size = New Size(186, 66)
         TblLayFeaturesMain.TabIndex = 0
         ' 
-        ' FlwLayFeatures
+        ' TxtBoxFeatures
         ' 
-        FlwLayFeatures.Dock = DockStyle.Fill
-        FlwLayFeatures.Location = New Point(722, 3)
-        FlwLayFeatures.Name = "FlwLayFeatures"
-        FlwLayFeatures.Size = New Size(714, 642)
-        FlwLayFeatures.TabIndex = 0
+        TxtBoxFeatures.Dock = DockStyle.Fill
+        TxtBoxFeatures.Location = New Point(3, 3)
+        TxtBoxFeatures.Multiline = True
+        TxtBoxFeatures.Name = "TxtBoxFeatures"
+        TxtBoxFeatures.ReadOnly = True
+        TxtBoxFeatures.ScrollBars = ScrollBars.Vertical
+        TxtBoxFeatures.Size = New Size(180, 60)
+        TxtBoxFeatures.TabIndex = 0
         ' 
         ' TabPgeSkills
         ' 
@@ -607,6 +637,7 @@ Partial Class FrmCharacterSheetMenu
         ' TabLayMain
         ' 
         TabLayMain.Controls.Add(TabPgeInfo)
+        TabLayMain.Controls.Add(TabPgeHealth)
         TabLayMain.Controls.Add(TabPgeSkills)
         TabLayMain.Controls.Add(TabPgeFeatures)
         TabLayMain.Dock = DockStyle.Fill
@@ -615,6 +646,239 @@ Partial Class FrmCharacterSheetMenu
         TabLayMain.SelectedIndex = 0
         TabLayMain.Size = New Size(1453, 682)
         TabLayMain.TabIndex = 0
+        ' 
+        ' TabPgeHealth
+        ' 
+        TabPgeHealth.Controls.Add(TblLayHealthMain)
+        TabPgeHealth.Location = New Point(4, 24)
+        TabPgeHealth.Name = "TabPgeHealth"
+        TabPgeHealth.Size = New Size(1445, 654)
+        TabPgeHealth.TabIndex = 3
+        TabPgeHealth.Text = "Health"
+        TabPgeHealth.UseVisualStyleBackColor = True
+        ' 
+        ' TblLayHealthMain
+        ' 
+        TblLayHealthMain.ColumnCount = 2
+        TblLayHealthMain.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TblLayHealthMain.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TblLayHealthMain.Controls.Add(TableLayoutPanel4, 0, 0)
+        TblLayHealthMain.Controls.Add(ChkListConditions, 1, 0)
+        TblLayHealthMain.Dock = DockStyle.Fill
+        TblLayHealthMain.Location = New Point(0, 0)
+        TblLayHealthMain.Name = "TblLayHealthMain"
+        TblLayHealthMain.RowCount = 2
+        TblLayHealthMain.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TblLayHealthMain.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TblLayHealthMain.Size = New Size(1445, 654)
+        TblLayHealthMain.TabIndex = 0
+        ' 
+        ' TableLayoutPanel4
+        ' 
+        TableLayoutPanel4.ColumnCount = 2
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel4.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel4.Controls.Add(TblLayHealthPoints, 0, 0)
+        TableLayoutPanel4.Controls.Add(TableLayoutPanel2, 1, 0)
+        TableLayoutPanel4.Controls.Add(TblLayDeathSaves, 0, 1)
+        TableLayoutPanel4.Dock = DockStyle.Fill
+        TableLayoutPanel4.Location = New Point(3, 3)
+        TableLayoutPanel4.Name = "TableLayoutPanel4"
+        TableLayoutPanel4.RowCount = 2
+        TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel4.Size = New Size(716, 321)
+        TableLayoutPanel4.TabIndex = 0
+        ' 
+        ' TblLayHealthPoints
+        ' 
+        TblLayHealthPoints.ColumnCount = 3
+        TblLayHealthPoints.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 40F))
+        TblLayHealthPoints.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 20F))
+        TblLayHealthPoints.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 40F))
+        TblLayHealthPoints.Controls.Add(Label1, 0, 0)
+        TblLayHealthPoints.Controls.Add(SpnBoxHealth, 1, 0)
+        TblLayHealthPoints.Controls.Add(LblHealthMax, 2, 0)
+        TblLayHealthPoints.Controls.Add(SpnBoxHealthMod, 1, 1)
+        TblLayHealthPoints.Controls.Add(Label3, 0, 1)
+        TblLayHealthPoints.Controls.Add(BtnApplyHealthModify, 2, 1)
+        TblLayHealthPoints.Dock = DockStyle.Fill
+        TblLayHealthPoints.Location = New Point(3, 3)
+        TblLayHealthPoints.Name = "TblLayHealthPoints"
+        TblLayHealthPoints.RowCount = 2
+        TblLayHealthPoints.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TblLayHealthPoints.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TblLayHealthPoints.Size = New Size(352, 154)
+        TblLayHealthPoints.TabIndex = 2
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Dock = DockStyle.Fill
+        Label1.Font = New Font("Segoe UI", 12F)
+        Label1.Location = New Point(3, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(134, 77)
+        Label1.TabIndex = 1
+        Label1.Text = "Health: "
+        Label1.TextAlign = ContentAlignment.TopRight
+        ' 
+        ' SpnBoxHealth
+        ' 
+        SpnBoxHealth.Dock = DockStyle.Top
+        SpnBoxHealth.Font = New Font("Segoe UI", 9F)
+        SpnBoxHealth.Location = New Point(143, 3)
+        SpnBoxHealth.Maximum = New Decimal(New Integer() {0, 0, 0, 0})
+        SpnBoxHealth.Name = "SpnBoxHealth"
+        SpnBoxHealth.Size = New Size(64, 23)
+        SpnBoxHealth.TabIndex = 1
+        ' 
+        ' LblHealthMax
+        ' 
+        LblHealthMax.AutoSize = True
+        LblHealthMax.Dock = DockStyle.Fill
+        LblHealthMax.Font = New Font("Segoe UI", 12F)
+        LblHealthMax.Location = New Point(213, 0)
+        LblHealthMax.Name = "LblHealthMax"
+        LblHealthMax.Size = New Size(136, 77)
+        LblHealthMax.TabIndex = 2
+        LblHealthMax.Text = "Label2"
+        ' 
+        ' SpnBoxHealthMod
+        ' 
+        SpnBoxHealthMod.Location = New Point(143, 80)
+        SpnBoxHealthMod.Minimum = New Decimal(New Integer() {100, 0, 0, Integer.MinValue})
+        SpnBoxHealthMod.Name = "SpnBoxHealthMod"
+        SpnBoxHealthMod.Size = New Size(64, 23)
+        SpnBoxHealthMod.TabIndex = 3
+        ' 
+        ' Label3
+        ' 
+        Label3.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI", 12F)
+        Label3.Location = New Point(66, 77)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(71, 21)
+        Label3.TabIndex = 4
+        Label3.Text = "Damage:"
+        ' 
+        ' BtnApplyHealthModify
+        ' 
+        BtnApplyHealthModify.Location = New Point(213, 80)
+        BtnApplyHealthModify.Name = "BtnApplyHealthModify"
+        BtnApplyHealthModify.Size = New Size(75, 23)
+        BtnApplyHealthModify.TabIndex = 5
+        BtnApplyHealthModify.Text = "Apply!"
+        BtnApplyHealthModify.UseVisualStyleBackColor = True
+        ' 
+        ' TableLayoutPanel2
+        ' 
+        TableLayoutPanel2.ColumnCount = 2
+        TableLayoutPanel2.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel2.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel2.Controls.Add(SpnBoxTempHp, 1, 0)
+        TableLayoutPanel2.Controls.Add(Label2, 0, 0)
+        TableLayoutPanel2.Location = New Point(361, 3)
+        TableLayoutPanel2.Name = "TableLayoutPanel2"
+        TableLayoutPanel2.RowCount = 2
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel2.Size = New Size(352, 154)
+        TableLayoutPanel2.TabIndex = 3
+        ' 
+        ' SpnBoxTempHp
+        ' 
+        SpnBoxTempHp.Location = New Point(179, 3)
+        SpnBoxTempHp.Minimum = New Decimal(New Integer() {10000, 0, 0, Integer.MinValue})
+        SpnBoxTempHp.Name = "SpnBoxTempHp"
+        SpnBoxTempHp.Size = New Size(120, 23)
+        SpnBoxTempHp.TabIndex = 0
+        ' 
+        ' Label2
+        ' 
+        Label2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 12F)
+        Label2.Location = New Point(62, 0)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(111, 21)
+        Label2.TabIndex = 1
+        Label2.Text = "Temporary HP:"
+        ' 
+        ' TblLayDeathSaves
+        ' 
+        TblLayDeathSaves.ColumnCount = 2
+        TblLayDeathSaves.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TblLayDeathSaves.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TblLayDeathSaves.Controls.Add(Label5, 1, 0)
+        TblLayDeathSaves.Controls.Add(ChkListsDeathSavesN, 1, 1)
+        TblLayDeathSaves.Controls.Add(ChkLstDeathSavesN, 0, 1)
+        TblLayDeathSaves.Controls.Add(Label4, 0, 0)
+        TblLayDeathSaves.Location = New Point(3, 163)
+        TblLayDeathSaves.Name = "TblLayDeathSaves"
+        TblLayDeathSaves.RowCount = 2
+        TblLayDeathSaves.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TblLayDeathSaves.RowStyles.Add(New RowStyle(SizeType.Percent, 80F))
+        TblLayDeathSaves.Size = New Size(352, 155)
+        TblLayDeathSaves.TabIndex = 4
+        ' 
+        ' Label5
+        ' 
+        Label5.Anchor = AnchorStyles.Left
+        Label5.AutoSize = True
+        Label5.Location = New Point(179, 8)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(107, 15)
+        Label5.TabIndex = 3
+        Label5.Text = "|Failed Death Saves"
+        Label5.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' ChkListsDeathSavesN
+        ' 
+        ChkListsDeathSavesN.CheckOnClick = True
+        ChkListsDeathSavesN.Dock = DockStyle.Fill
+        ChkListsDeathSavesN.FormattingEnabled = True
+        ChkListsDeathSavesN.Items.AddRange(New Object() {"1", "2", "3"})
+        ChkListsDeathSavesN.Location = New Point(179, 34)
+        ChkListsDeathSavesN.Name = "ChkListsDeathSavesN"
+        ChkListsDeathSavesN.Size = New Size(170, 118)
+        ChkListsDeathSavesN.TabIndex = 0
+        ' 
+        ' ChkLstDeathSavesN
+        ' 
+        ChkLstDeathSavesN.CheckOnClick = True
+        ChkLstDeathSavesN.Dock = DockStyle.Fill
+        ChkLstDeathSavesN.FormattingEnabled = True
+        ChkLstDeathSavesN.Items.AddRange(New Object() {"1", "2", "3"})
+        ChkLstDeathSavesN.Location = New Point(3, 34)
+        ChkLstDeathSavesN.Name = "ChkLstDeathSavesN"
+        ChkLstDeathSavesN.RightToLeft = RightToLeft.Yes
+        ChkLstDeathSavesN.Size = New Size(170, 118)
+        ChkLstDeathSavesN.TabIndex = 1
+        ' 
+        ' Label4
+        ' 
+        Label4.Anchor = AnchorStyles.Right
+        Label4.AutoSize = True
+        Label4.Location = New Point(43, 8)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(130, 15)
+        Label4.TabIndex = 2
+        Label4.Text = "Succeded Death  Saves|"
+        Label4.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' ChkListConditions
+        ' 
+        ChkListConditions.CheckOnClick = True
+        ChkListConditions.Dock = DockStyle.Fill
+        ChkListConditions.FormattingEnabled = True
+        ChkListConditions.Items.AddRange(New Object() {"Blinded", "Charmed", "Deafened", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralysed", "Petrified", "Poisoned", "Prone", "Restrained", "Stunned"})
+        ChkListConditions.Location = New Point(725, 3)
+        ChkListConditions.Name = "ChkListConditions"
+        ChkListConditions.RightToLeft = RightToLeft.Yes
+        ChkListConditions.Size = New Size(717, 321)
+        ChkListConditions.TabIndex = 1
         ' 
         ' FrmCharacterSheetMenu
         ' 
@@ -626,6 +890,7 @@ Partial Class FrmCharacterSheetMenu
         Text = "FrmCharacterSheetMenu"
         TabPgeFeatures.ResumeLayout(False)
         TblLayFeaturesMain.ResumeLayout(False)
+        TblLayFeaturesMain.PerformLayout()
         TabPgeSkills.ResumeLayout(False)
         TblLaySkillsMain.ResumeLayout(False)
         TableLayoutPanel3.ResumeLayout(False)
@@ -638,6 +903,18 @@ Partial Class FrmCharacterSheetMenu
         TblLayStats.ResumeLayout(False)
         TblLayMiscStats.ResumeLayout(False)
         TabLayMain.ResumeLayout(False)
+        TabPgeHealth.ResumeLayout(False)
+        TblLayHealthMain.ResumeLayout(False)
+        TableLayoutPanel4.ResumeLayout(False)
+        TblLayHealthPoints.ResumeLayout(False)
+        TblLayHealthPoints.PerformLayout()
+        CType(SpnBoxHealth, ComponentModel.ISupportInitialize).EndInit()
+        CType(SpnBoxHealthMod, ComponentModel.ISupportInitialize).EndInit()
+        TableLayoutPanel2.ResumeLayout(False)
+        TableLayoutPanel2.PerformLayout()
+        CType(SpnBoxTempHp, ComponentModel.ISupportInitialize).EndInit()
+        TblLayDeathSaves.ResumeLayout(False)
+        TblLayDeathSaves.PerformLayout()
         ResumeLayout(False)
     End Sub
 
@@ -689,4 +966,24 @@ Partial Class FrmCharacterSheetMenu
     Friend WithEvents StaAC As StatIcon
     Friend WithEvents TabLayMain As TabControl
     Friend WithEvents FlwLayFeatures As FlowLayoutPanel
+    Friend WithEvents TxtBoxFeatures As TextBox
+    Friend WithEvents TabPgeHealth As TabPage
+    Friend WithEvents TblLayHealthMain As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
+    Friend WithEvents SpnBoxHealth As NumericUpDown
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TblLayHealthPoints As TableLayoutPanel
+    Friend WithEvents LblHealthMax As Label
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents SpnBoxTempHp As NumericUpDown
+    Friend WithEvents Label2 As Label
+    Friend WithEvents SpnBoxHealthMod As NumericUpDown
+    Friend WithEvents Label3 As Label
+    Friend WithEvents BtnApplyHealthModify As Button
+    Friend WithEvents TblLayDeathSaves As TableLayoutPanel
+    Friend WithEvents ChkListConditions As CheckedListBox
+    Friend WithEvents ChkListsDeathSavesN As CheckedListBox
+    Friend WithEvents ChkLstDeathSavesN As CheckedListBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
 End Class

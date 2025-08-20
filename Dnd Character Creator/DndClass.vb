@@ -260,6 +260,8 @@ Public Class Character
     Public proficiencyBonus As Integer
     Public features As List(Of String) = New List(Of String)
 
+    Public currentHp As Integer
+
 
     Public Sub FinishCreation()
         For Each feature In dndClass.features
@@ -274,6 +276,11 @@ Public Class Character
         initiative = 10 + Stats.GetModifierFromScore(stats.dexterity)
         proficiencyBonus = 2
 
+        currentHp = maxHp
+    End Sub
+
+    Public Sub AdjustHp(changeToHp As Integer)
+        currentHp -= changeToHp
     End Sub
 
 

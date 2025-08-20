@@ -51,14 +51,13 @@
         StaBtnWis.ShowModifier(character.stats.GetModifierForSkill("Wis"), character.stats.wisdom)
         StaBtnCha.ShowModifier(character.stats.GetModifierForSkill("Cha"), character.stats.charisma)
 
-        Dim featureLabel As Label
         For Each feature In character.features
-            featureLabel = New Label()
-            featureLabel.AutoSize = True
-            featureLabel.Text = feature
-            FlwLayFeatures.Controls.Add(featureLabel)
-            FlwLayFeatures.Controls.Add(New Label())
+            TxtBoxFeatures.Text += (feature & $"{vbCrLf}")
         Next
+
+        SpnBoxHealth.Maximum = character.maxHp
+        SpnBoxHealth.Value = character.currentHp
+        LblHealthMax.Text = "\" & character.maxHp.ToString()
 
     End Sub
 
@@ -78,4 +77,18 @@
         DiceRoller.DisplayRoll(rollDetails)
     End Sub
 
+    Private Sub SpnBoxHealth_ValueChanged(sender As NumericUpDown, e As EventArgs) Handles SpnBoxHealth.ValueChanged
+        character.currentHp = sender.Value
+    End Sub
+
+    Private Sub BtnApplyHealthModify_Click(sender As Object, e As EventArgs) Handles BtnApplyHealthModify.Click
+        Dim damageToDeal As Integer = SpnBoxHealthMod.Value
+        If damageToDeal > 0 Then
+            damageToDeal -= SpnBoxTempHp.Value
+            SpnBoxTempHp.Value = Math.Clamp(SpnBoxTempHp.Value - SpnBoxHealthMod.Value, 0, 100000)
+            character.AdjustHp(damageToDeal)
+        End If
+        SpnBoxHealthMod.Value = 0
+        SpnBoxHealth.Value = character.currentHp
+    End Sub
 End Class
