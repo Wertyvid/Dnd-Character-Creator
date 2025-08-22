@@ -132,6 +132,7 @@ Partial Class FrmCharacterCreatorMenu
         ' 
         ' CmbBoxClassSelect
         ' 
+        CmbBoxClassSelect.DropDownStyle = ComboBoxStyle.DropDownList
         CmbBoxClassSelect.FormattingEnabled = True
         CmbBoxClassSelect.Location = New Point(3, 3)
         CmbBoxClassSelect.Name = "CmbBoxClassSelect"
@@ -149,6 +150,7 @@ Partial Class FrmCharacterCreatorMenu
         ' 
         ' CmbBoxRaceSelect
         ' 
+        CmbBoxRaceSelect.DropDownStyle = ComboBoxStyle.DropDownList
         CmbBoxRaceSelect.FormattingEnabled = True
         CmbBoxRaceSelect.Location = New Point(3, 141)
         CmbBoxRaceSelect.Name = "CmbBoxRaceSelect"
@@ -157,6 +159,7 @@ Partial Class FrmCharacterCreatorMenu
         ' 
         ' CmbBoxBackgroundSelect
         ' 
+        CmbBoxBackgroundSelect.DropDownStyle = ComboBoxStyle.DropDownList
         CmbBoxBackgroundSelect.FormattingEnabled = True
         CmbBoxBackgroundSelect.Location = New Point(3, 279)
         CmbBoxBackgroundSelect.Name = "CmbBoxBackgroundSelect"
@@ -505,6 +508,7 @@ Partial Class FrmCharacterCreatorMenu
         ' 
         ' CmbBoxAlignmentSelect
         ' 
+        CmbBoxAlignmentSelect.DropDownStyle = ComboBoxStyle.DropDownList
         CmbBoxAlignmentSelect.FormattingEnabled = True
         CmbBoxAlignmentSelect.Location = New Point(199, 141)
         CmbBoxAlignmentSelect.Name = "CmbBoxAlignmentSelect"

@@ -84,6 +84,7 @@ Public Class FrmCharacterCreatorMenu
         Dim newSkillPicker As ComboBox
         For n As Integer = 1 To character.dndClass.skillCount
             newSkillPicker = New ComboBox()
+            newSkillPicker.DropDownStyle = ComboBoxStyle.DropDownList
             For Each skill In character.dndClass.skillOptions
                 newSkillPicker.Items.Add(skill)
             Next

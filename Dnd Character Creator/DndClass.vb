@@ -315,6 +315,65 @@ Public Class DiceRoller
         Return rollDetails
     End Function
 
+    Shared Function DetailedSpellAttack(toHitModifier As Integer, damageDie As Integer, damageDieCount As Integer, damageType As String, rnd As Random)
+        Dim toHitRollResult As Integer
+        Dim rawRollResult As Integer
+        Dim attackDetails As String = ""
+        Dim crit As Boolean = False
+        For r As Integer = 0 To 1
+            rawRollResult = RollDice(rnd)
+            If rawRollResult = 20 Then
+                crit = True
+            End If
+            toHitRollResult = rawRollResult + toHitModifier
+            attackDetails = attackDetails & $"{toHitRollResult.ToString()} = {rawRollResult.ToString()} + {toHitModifier.ToString()}{vbCrLf}"
+        Next
+        Dim dealtDamage As Integer = 0
+        Dim damageDetails As String = "= "
+        Dim rawAttackRoll As Integer
+        If crit Then
+            damageDieCount *= 2
+        End If
+        For r As Integer = 1 To damageDieCount
+            rawAttackRoll = RollDice(rnd, damageDie)
+            dealtDamage += rawAttackRoll
+            damageDetails = damageDetails & $"+ {rawAttackRoll}"
+        Next
+        damageDetails = $"{dealtDamage.ToString()} {damageDetails}"
+        attackDetails = attackDetails & $"{damageType} Damage:{vbCrLf}" & damageDetails
+        Return attackDetails
+    End Function
+
+    Shared Function DetailedWeaponAttack(statModfier As Integer, proficiencyBonus As Integer, damageDie As Integer, damageDieCount As Integer, plusXWeapon As Integer, damageType As String, rnd As Random)
+        Dim toHitRollResult As Integer
+        Dim rawRollResult As Integer
+        Dim attackDetails As String = ""
+        Dim crit As Boolean = False
+        For r As Integer = 0 To 1
+            rawRollResult = RollDice(rnd)
+            If rawRollResult = 20 Then
+                crit = True
+            End If
+            toHitRollResult = rawRollResult + statModfier + proficiencyBonus + plusXWeapon
+            attackDetails = attackDetails & $"{toHitRollResult.ToString()} = {rawRollResult.ToString()} + {statModfier.ToString()} + {proficiencyBonus.ToString()} + {plusXWeapon.ToString}{vbCrLf}"
+        Next
+        Dim dealtDamage As Integer = 0
+        Dim damageDetails As String = "= "
+        Dim rawAttackRoll As Integer
+        If crit Then
+            damageDieCount *= 2
+        End If
+        For r As Integer = 1 To damageDieCount
+            rawAttackRoll = RollDice(rnd, damageDie)
+            dealtDamage += rawAttackRoll
+            damageDetails = damageDetails & $"+ {rawAttackRoll}"
+        Next
+        dealtDamage += statModfier + plusXWeapon
+        damageDetails = damageDetails & $"+ {statModfier} + {plusXWeapon}"
+        damageDetails = $"{dealtDamage.ToString()} {damageDetails}"
+        attackDetails = attackDetails & $"{damageType} Damage:{vbCrLf}" & damageDetails
+        Return attackDetails
+    End Function
     Shared Sub DisplayRoll(rollDetails As String)
         MessageBox.Show(rollDetails, "Roll Result!")
     End Sub

@@ -91,4 +91,19 @@
         SpnBoxHealthMod.Value = 0
         SpnBoxHealth.Value = character.currentHp
     End Sub
+
+    Private Sub AttackHandler1_SpellAttack(toHitStat As String, damageDie As Integer, damageDieCount As Integer, damageType As String) Handles AttackHandler1.SpellAttack, AttackHandler2.SpellAttack, AttackHandler3.SpellAttack
+        Dim spellAttackModifier = character.stats.GetModifierForSkill(toHitStat) + character.proficiencyBonus
+        Dim attackDetails = DiceRoller.DetailedSpellAttack(spellAttackModifier, damageDie, damageDieCount, damageType, rnd)
+        DiceRoller.DisplayRoll(attackDetails)
+    End Sub
+
+    Private Sub AttackHandler1_WeaponAttack(toHitStat As String, damageDie As Integer, damageDieCount As Integer, proficient As Boolean, plusXWeapon As Integer, damageType As String) Handles AttackHandler1.WeaponAttack, AttackHandler2.WeaponAttack, AttackHandler3.WeaponAttack
+        Dim proficiencyBonus As Integer = 0
+        If proficient Then
+            proficiencyBonus = character.proficiencyBonus
+        End If
+        Dim attackDetails = DiceRoller.DetailedWeaponAttack(character.stats.GetModifierForSkill(toHitStat), proficiencyBonus, damageDie, damageDieCount, plusXWeapon, damageType, rnd)
+        DiceRoller.DisplayRoll(attackDetails)
+    End Sub
 End Class
