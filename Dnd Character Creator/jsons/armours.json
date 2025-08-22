@@ -1,0 +1,80 @@
+[
+{
+	"armourName": "None",
+	"baseAC": 10,
+	"stealthDisadvantage": false,
+	"maxDexGain": 100
+},
+{
+	"armourName": "Padded",
+	"baseAC": 11,
+	"stealthDisadvantage": true,
+	"maxDexGain": 100
+},
+{
+	"armourName": "Leather",
+	"baseAC": 11,
+	"stealthDisadvantage": false,
+	"maxDexGain": 100
+},
+{
+	"armourName": "Studded Leather",
+	"baseAC": 12,
+	"stealthDisadvantage": false,
+	"maxDexGain": 100
+},
+{
+	"armourName": "Hide",
+	"baseAC": 12,
+	"stealthDisadvantage": false,
+	"maxDexGain": 2
+},
+{
+	"armourName": "Chain shirt",
+	"baseAC": 13,
+	"stealthDisadvantage": false,
+	"maxDexGain": 2
+},
+{
+	"armourName": "Scale mail",
+	"baseAC": 14,
+	"stealthDisadvantage": true,
+	"maxDexGain": 2
+},
+{
+	"armourName": "Breastplate",
+	"baseAC": 14,
+	"stealthDisadvantage": false,
+	"maxDexGain": 2
+},
+{
+	"armourName": "Half Plate",
+	"baseAC": 15,
+	"stealthDisadvantage": true,
+	"maxDexGain": 2
+},
+{
+	"armourName": "Ring mail",
+	"baseAC": 14,
+	"stealthDisadvantage": true,
+	"maxDexGain": 0	
+},
+{
+	"armourName": "Chain mail",
+	"baseAC": 16,
+	"stealthDisadvantage": true,
+	"maxDexGain": 0
+},
+{
+	"armourName": "Splint",
+	"baseAC": 17,
+	"stealthDisadvantage": true,
+	"maxDexGain": 0
+},
+{
+	"armourName": "Plate",
+	"baseAC": 18,
+	"stealthDisadvantage": true,
+	"maxDexGain": 0
+}
+]

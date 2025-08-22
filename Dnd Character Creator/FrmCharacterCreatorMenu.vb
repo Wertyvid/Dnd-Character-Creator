@@ -10,11 +10,13 @@ Public Class FrmCharacterCreatorMenu
     Dim races As List(Of Race)
     Dim backgrounds As List(Of Background)
     Dim alignments As String() = New String() {"Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "True Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"}
+    Dim armours As List(Of Armour)
     Dim character As Character = New Character()
     Private Sub FrmCharacterCreatorMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         races = JsonConvert.DeserializeObject(Of List(Of Race))(IO.File.OpenText("jsons/races.json").ReadToEnd())
         classes = JsonConvert.DeserializeObject(Of List(Of DndClass))(IO.File.OpenText("jsons/classes.json").ReadToEnd())
         backgrounds = JsonConvert.DeserializeObject(Of List(Of Background))(IO.File.OpenText("jsons/backgrounds.json").ReadToEnd())
+        armours = JsonConvert.DeserializeObject(Of List(Of Armour))(IO.File.OpenText("jsons/armours.json").ReadToEnd())
         For Each race In races
             CmbBoxRaceSelect.Items.Add(race.raceName)
         Next
@@ -27,6 +29,9 @@ Public Class FrmCharacterCreatorMenu
         For Each alignment In alignments
             CmbBoxAlignmentSelect.Items.Add(alignment)
         Next
+        For Each armour In armours
+            CmbBoxArmourSelect.Items.Add(armour.armourName)
+        Next
     End Sub
 
     Private Sub BtnApplyClassRace_Click(sender As Object, e As EventArgs) Handles BtnApplyClassRace.Click
@@ -34,6 +39,7 @@ Public Class FrmCharacterCreatorMenu
             character.dndClass = classes(CmbBoxClassSelect.SelectedIndex)
             character.race = races(CmbBoxRaceSelect.SelectedIndex)
             character.background = backgrounds(CmbBoxBackgroundSelect.SelectedIndex)
+            character.armour = armours(CmbBoxBackgroundSelect.SelectedIndex)
             FillSkillOptions()
             UpdateStats()
         Catch ex As Exception

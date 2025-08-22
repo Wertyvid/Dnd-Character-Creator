@@ -245,6 +245,15 @@ Public Class Background
     Public feature As String
 End Class
 
+Public Class Armour
+    Public armourName As String
+    Public baseAC As Integer
+    Public stealthDisadvantage As Boolean
+    Public maxDexGain As Integer
+
+
+End Class
+
 Public Class Character
     Public name As String
     Public alignment As String
@@ -253,6 +262,7 @@ Public Class Character
     Public race As Race
     Public stats As Stats
     Public skills As Skills
+    Public armour As Armour
 
     Public maxHp As Integer
     Public armourClass As Integer
@@ -272,9 +282,14 @@ Public Class Character
         Next
         features.Add(background.feature)
         maxHp = dndClass.hitDiceSize + Stats.GetModifierFromScore(stats.consititution)
-        armourClass = 10 + Stats.GetModifierFromScore(stats.dexterity)
         initiative = 10 + Stats.GetModifierFromScore(stats.dexterity)
         proficiencyBonus = 2
+        If armour.maxDexGain = 0 Then
+            armourClass = armour.baseAC
+        Else
+            armourClass = armour.baseAC + Math.Clamp(Stats.GetModifierFromScore(stats.dexterity), -100, armour.maxDexGain)
+        End If
+
 
         currentHp = maxHp
     End Sub

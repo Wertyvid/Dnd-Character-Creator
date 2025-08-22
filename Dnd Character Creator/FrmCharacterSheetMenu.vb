@@ -106,4 +106,8 @@
         Dim attackDetails = DiceRoller.DetailedWeaponAttack(character.stats.GetModifierForSkill(toHitStat), proficiencyBonus, damageDie, damageDieCount, plusXWeapon, damageType, rnd)
         DiceRoller.DisplayRoll(attackDetails)
     End Sub
+
+    Private Sub BtnBasicDiceRoll_Click(sender As Object, e As EventArgs) Handles BtnBasicDiceRoll.Click
+        DiceRoller.DisplayRoll(DiceRoller.RollDice(rnd, SpnBoxDXroll.Value))
+    End Sub
 End Class

@@ -101,6 +101,9 @@ Partial Class FrmCharacterSheetMenu
         AttackHandler1 = New AttackHandler()
         AttackHandler2 = New AttackHandler()
         AttackHandler3 = New AttackHandler()
+        TableLayoutPanel7 = New TableLayoutPanel()
+        SpnBoxDXroll = New NumericUpDown()
+        BtnBasicDiceRoll = New Button()
         TabPgeFeatures.SuspendLayout()
         TblLayFeaturesMain.SuspendLayout()
         TabPgeSkills.SuspendLayout()
@@ -126,6 +129,8 @@ Partial Class FrmCharacterSheetMenu
         TabPgeAttacks.SuspendLayout()
         TableLayoutPanel5.SuspendLayout()
         TableLayoutPanel6.SuspendLayout()
+        TableLayoutPanel7.SuspendLayout()
+        CType(SpnBoxDXroll, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' TabPgeFeatures
@@ -909,12 +914,13 @@ Partial Class FrmCharacterSheetMenu
         ' TableLayoutPanel5
         ' 
         TableLayoutPanel5.ColumnCount = 2
-        TableLayoutPanel5.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
-        TableLayoutPanel5.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel5.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 60F))
+        TableLayoutPanel5.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 40F))
         TableLayoutPanel5.Controls.Add(TableLayoutPanel6, 0, 0)
         TableLayoutPanel5.Controls.Add(AttackHandler1, 0, 1)
         TableLayoutPanel5.Controls.Add(AttackHandler2, 0, 2)
         TableLayoutPanel5.Controls.Add(AttackHandler3, 0, 3)
+        TableLayoutPanel5.Controls.Add(TableLayoutPanel7, 1, 0)
         TableLayoutPanel5.Dock = DockStyle.Fill
         TableLayoutPanel5.Location = New Point(0, 0)
         TableLayoutPanel5.Name = "TableLayoutPanel5"
@@ -950,16 +956,16 @@ Partial Class FrmCharacterSheetMenu
         TableLayoutPanel6.Name = "TableLayoutPanel6"
         TableLayoutPanel6.RowCount = 1
         TableLayoutPanel6.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
-        TableLayoutPanel6.Size = New Size(716, 124)
+        TableLayoutPanel6.Size = New Size(861, 124)
         TableLayoutPanel6.TabIndex = 0
         ' 
         ' Label12
         ' 
         Label12.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Label12.AutoSize = True
-        Label12.Location = New Point(477, 54)
+        Label12.Location = New Point(573, 54)
         Label12.Name = "Label12"
-        Label12.Size = New Size(73, 15)
+        Label12.Size = New Size(89, 15)
         Label12.TabIndex = 6
         Label12.Text = "Weapon +X"
         Label12.TextAlign = ContentAlignment.MiddleCenter
@@ -968,9 +974,9 @@ Partial Class FrmCharacterSheetMenu
         ' 
         Label11.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Label11.AutoSize = True
-        Label11.Location = New Point(398, 47)
+        Label11.Location = New Point(478, 54)
         Label11.Name = "Label11"
-        Label11.Size = New Size(73, 30)
+        Label11.Size = New Size(89, 15)
         Label11.TabIndex = 5
         Label11.Text = "Damage Type"
         Label11.TextAlign = ContentAlignment.MiddleCenter
@@ -979,9 +985,9 @@ Partial Class FrmCharacterSheetMenu
         ' 
         Label10.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Label10.AutoSize = True
-        Label10.Location = New Point(319, 54)
+        Label10.Location = New Point(383, 54)
         Label10.Name = "Label10"
-        Label10.Size = New Size(73, 15)
+        Label10.Size = New Size(89, 15)
         Label10.TabIndex = 4
         Label10.Text = "Xd"
         Label10.TextAlign = ContentAlignment.MiddleCenter
@@ -990,9 +996,9 @@ Partial Class FrmCharacterSheetMenu
         ' 
         Label9.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Label9.AutoSize = True
-        Label9.Location = New Point(240, 54)
+        Label9.Location = New Point(288, 54)
         Label9.Name = "Label9"
-        Label9.Size = New Size(73, 15)
+        Label9.Size = New Size(89, 15)
         Label9.TabIndex = 3
         Label9.Text = "dX"
         Label9.TextAlign = ContentAlignment.MiddleCenter
@@ -1001,9 +1007,9 @@ Partial Class FrmCharacterSheetMenu
         ' 
         Label8.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Label8.AutoSize = True
-        Label8.Location = New Point(161, 54)
+        Label8.Location = New Point(193, 54)
         Label8.Name = "Label8"
-        Label8.Size = New Size(73, 15)
+        Label8.Size = New Size(89, 15)
         Label8.TabIndex = 2
         Label8.Text = "Stat"
         Label8.TextAlign = ContentAlignment.MiddleCenter
@@ -1012,39 +1018,79 @@ Partial Class FrmCharacterSheetMenu
         ' 
         Label7.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         Label7.AutoSize = True
-        Label7.Location = New Point(82, 54)
+        Label7.Location = New Point(98, 54)
         Label7.Name = "Label7"
-        Label7.Size = New Size(73, 15)
+        Label7.Size = New Size(89, 15)
         Label7.TabIndex = 1
         Label7.Text = "Name"
         Label7.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' AttackHandler1
         ' 
+        AttackHandler1.Dock = DockStyle.Fill
         AttackHandler1.IsProficient = False
         AttackHandler1.IsSpell = False
         AttackHandler1.Location = New Point(3, 133)
         AttackHandler1.Name = "AttackHandler1"
-        AttackHandler1.Size = New Size(716, 124)
+        AttackHandler1.Size = New Size(861, 124)
         AttackHandler1.TabIndex = 1
         ' 
         ' AttackHandler2
         ' 
+        AttackHandler2.Dock = DockStyle.Fill
         AttackHandler2.IsProficient = False
         AttackHandler2.IsSpell = False
         AttackHandler2.Location = New Point(3, 263)
         AttackHandler2.Name = "AttackHandler2"
-        AttackHandler2.Size = New Size(716, 124)
+        AttackHandler2.Size = New Size(861, 124)
         AttackHandler2.TabIndex = 2
         ' 
         ' AttackHandler3
         ' 
+        AttackHandler3.Dock = DockStyle.Fill
         AttackHandler3.IsProficient = False
         AttackHandler3.IsSpell = False
         AttackHandler3.Location = New Point(3, 393)
         AttackHandler3.Name = "AttackHandler3"
-        AttackHandler3.Size = New Size(716, 124)
+        AttackHandler3.Size = New Size(861, 124)
         AttackHandler3.TabIndex = 3
+        ' 
+        ' TableLayoutPanel7
+        ' 
+        TableLayoutPanel7.ColumnCount = 2
+        TableLayoutPanel7.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel7.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50F))
+        TableLayoutPanel7.Controls.Add(SpnBoxDXroll, 1, 0)
+        TableLayoutPanel7.Controls.Add(BtnBasicDiceRoll, 0, 0)
+        TableLayoutPanel7.Dock = DockStyle.Right
+        TableLayoutPanel7.Location = New Point(1242, 3)
+        TableLayoutPanel7.Name = "TableLayoutPanel7"
+        TableLayoutPanel7.RowCount = 2
+        TableLayoutPanel7.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel7.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel7.Size = New Size(200, 124)
+        TableLayoutPanel7.TabIndex = 4
+        ' 
+        ' SpnBoxDXroll
+        ' 
+        SpnBoxDXroll.Location = New Point(103, 3)
+        SpnBoxDXroll.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
+        SpnBoxDXroll.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        SpnBoxDXroll.Name = "SpnBoxDXroll"
+        SpnBoxDXroll.Size = New Size(94, 23)
+        SpnBoxDXroll.TabIndex = 0
+        SpnBoxDXroll.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        ' 
+        ' BtnBasicDiceRoll
+        ' 
+        BtnBasicDiceRoll.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        BtnBasicDiceRoll.Location = New Point(22, 3)
+        BtnBasicDiceRoll.Name = "BtnBasicDiceRoll"
+        BtnBasicDiceRoll.Size = New Size(75, 23)
+        BtnBasicDiceRoll.TabIndex = 1
+        BtnBasicDiceRoll.Text = "Roll D"
+        BtnBasicDiceRoll.TextAlign = ContentAlignment.MiddleRight
+        BtnBasicDiceRoll.UseVisualStyleBackColor = True
         ' 
         ' FrmCharacterSheetMenu
         ' 
@@ -1085,6 +1131,8 @@ Partial Class FrmCharacterSheetMenu
         TableLayoutPanel5.ResumeLayout(False)
         TableLayoutPanel6.ResumeLayout(False)
         TableLayoutPanel6.PerformLayout()
+        TableLayoutPanel7.ResumeLayout(False)
+        CType(SpnBoxDXroll, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -1168,4 +1216,7 @@ Partial Class FrmCharacterSheetMenu
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
+    Friend WithEvents SpnBoxDXroll As NumericUpDown
+    Friend WithEvents BtnBasicDiceRoll As Button
 End Class

@@ -29,6 +29,7 @@ Partial Class FrmCharacterCreatorMenu
         BtnApplyClassRace = New Button()
         CmbBoxRaceSelect = New ComboBox()
         CmbBoxBackgroundSelect = New ComboBox()
+        CmbBoxArmourSelect = New ComboBox()
         TabPgeStats = New TabPage()
         TableLayoutPanel2 = New TableLayoutPanel()
         TableLayoutPanel3 = New TableLayoutPanel()
@@ -120,6 +121,7 @@ Partial Class FrmCharacterCreatorMenu
         TableLayoutPanel1.Controls.Add(BtnApplyClassRace, 1, 0)
         TableLayoutPanel1.Controls.Add(CmbBoxRaceSelect, 0, 1)
         TableLayoutPanel1.Controls.Add(CmbBoxBackgroundSelect, 0, 2)
+        TableLayoutPanel1.Controls.Add(CmbBoxArmourSelect, 1, 1)
         TableLayoutPanel1.Dock = DockStyle.Fill
         TableLayoutPanel1.Location = New Point(3, 3)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -165,6 +167,15 @@ Partial Class FrmCharacterCreatorMenu
         CmbBoxBackgroundSelect.Name = "CmbBoxBackgroundSelect"
         CmbBoxBackgroundSelect.Size = New Size(121, 23)
         CmbBoxBackgroundSelect.TabIndex = 4
+        ' 
+        ' CmbBoxArmourSelect
+        ' 
+        CmbBoxArmourSelect.DropDownStyle = ComboBoxStyle.DropDownList
+        CmbBoxArmourSelect.FormattingEnabled = True
+        CmbBoxArmourSelect.Location = New Point(396, 141)
+        CmbBoxArmourSelect.Name = "CmbBoxArmourSelect"
+        CmbBoxArmourSelect.Size = New Size(121, 23)
+        CmbBoxArmourSelect.TabIndex = 5
         ' 
         ' TabPgeStats
         ' 
@@ -633,4 +644,5 @@ Partial Class FrmCharacterCreatorMenu
     Friend WithEvents Label9 As Label
     Friend WithEvents CmbBoxAlignmentSelect As ComboBox
     Friend WithEvents SaveCharacterSelector As SaveFileDialog
+    Friend WithEvents CmbBoxArmourSelect As ComboBox
 End Class
