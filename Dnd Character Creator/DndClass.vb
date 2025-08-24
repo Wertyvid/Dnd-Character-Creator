@@ -284,7 +284,13 @@ Public Class Character
         maxHp = dndClass.hitDiceSize + Stats.GetModifierFromScore(stats.consititution)
         initiative = 10 + Stats.GetModifierFromScore(stats.dexterity)
         proficiencyBonus = 2
-        If armour.maxDexGain = 0 Then
+
+
+        If armour.armourName = "None" And dndClass.className = "Barbarian" Then
+            armourClass = 10 + Stats.GetModifierFromScore(stats.dexterity) + Stats.GetModifierFromScore(stats.consititution)
+        ElseIf armour.armourName = "None" And dndClass.className = "Monk" Then
+            armourClass = 10 + Stats.GetModifierFromScore(stats.dexterity) + Stats.GetModifierFromScore(stats.wisdom)
+        ElseIf armour.maxDexGain = 0 Then
             armourClass = armour.baseAC
         Else
             armourClass = armour.baseAC + Math.Clamp(Stats.GetModifierFromScore(stats.dexterity), -100, armour.maxDexGain)
