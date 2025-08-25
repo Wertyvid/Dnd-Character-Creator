@@ -71,7 +71,7 @@
         DiceRoller.DisplayRoll(rollDetails)
     End Sub
 
-    Public Sub StatRoller_Roll(stat As String) Handles StaBtnStr.Roll, StaBtnDex.Roll, StaBtnCon.Roll, StaBtnInt.Roll, StaBtnWis.Roll, StaBtnCha.Roll
+    Public Sub StatRoller_Roll(stat As String)
         Dim rollDetails As String
         rollDetails = DiceRoller.DetailedStatRoll(character.stats.GetModifierForSkill(stat), 0, rnd)
         DiceRoller.DisplayRoll(rollDetails)
