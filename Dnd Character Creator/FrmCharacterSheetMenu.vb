@@ -87,8 +87,11 @@
             damageToDeal -= SpnBoxTempHp.Value
             SpnBoxTempHp.Value = Math.Clamp(SpnBoxTempHp.Value - SpnBoxHealthMod.Value, 0, 100000)
             character.AdjustHp(damageToDeal)
+        Else
+            character.AdjustHp(damageToDeal)
         End If
         SpnBoxHealthMod.Value = 0
+        character.currentHp = Math.Clamp(character.currentHp, 0, character.maxHp)
         SpnBoxHealth.Value = character.currentHp
     End Sub
 

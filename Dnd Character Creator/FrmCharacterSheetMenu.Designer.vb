@@ -174,7 +174,7 @@ Partial Class FrmCharacterSheetMenu
         TabPgeSkills.Location = New Point(4, 24)
         TabPgeSkills.Name = "TabPgeSkills"
         TabPgeSkills.Padding = New Padding(3)
-        TabPgeSkills.Size = New Size(192, 72)
+        TabPgeSkills.Size = New Size(1445, 654)
         TabPgeSkills.TabIndex = 1
         TabPgeSkills.Text = "Skills"
         TabPgeSkills.UseVisualStyleBackColor = True
@@ -192,7 +192,7 @@ Partial Class FrmCharacterSheetMenu
         TblLaySkillsMain.Name = "TblLaySkillsMain"
         TblLaySkillsMain.RowCount = 1
         TblLaySkillsMain.RowStyles.Add(New RowStyle(SizeType.Percent, 100F))
-        TblLaySkillsMain.Size = New Size(186, 66)
+        TblLaySkillsMain.Size = New Size(1439, 648)
         TblLaySkillsMain.TabIndex = 0
         ' 
         ' TblLaySkillProficiencies
@@ -234,89 +234,89 @@ Partial Class FrmCharacterSheetMenu
         TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
         TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
         TblLaySkillProficiencies.RowStyles.Add(New RowStyle(SizeType.Percent, 4.166667F))
-        TblLaySkillProficiencies.Size = New Size(87, 60)
+        TblLaySkillProficiencies.Size = New Size(713, 642)
         TblLaySkillProficiencies.TabIndex = 0
         ' 
         ' Panel1
         ' 
-        Panel1.Location = New Point(46, 21)
+        Panel1.Location = New Point(359, 213)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(38, 1)
         Panel1.TabIndex = 0
         ' 
         ' Panel2
         ' 
-        Panel2.Location = New Point(46, 24)
+        Panel2.Location = New Point(359, 248)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(38, 1)
         Panel2.TabIndex = 1
         ' 
         ' Panel3
         ' 
-        Panel3.Location = New Point(46, 27)
+        Panel3.Location = New Point(359, 283)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(38, 1)
         Panel3.TabIndex = 2
         ' 
         ' Panel4
         ' 
-        Panel4.Location = New Point(46, 30)
+        Panel4.Location = New Point(359, 318)
         Panel4.Name = "Panel4"
         Panel4.Size = New Size(38, 1)
         Panel4.TabIndex = 3
         ' 
         ' Panel5
         ' 
-        Panel5.Location = New Point(46, 33)
+        Panel5.Location = New Point(359, 353)
         Panel5.Name = "Panel5"
         Panel5.Size = New Size(38, 1)
         Panel5.TabIndex = 4
         ' 
         ' Panel6
         ' 
-        Panel6.Location = New Point(46, 36)
+        Panel6.Location = New Point(359, 388)
         Panel6.Name = "Panel6"
         Panel6.Size = New Size(38, 1)
         Panel6.TabIndex = 5
         ' 
         ' Panel7
         ' 
-        Panel7.Location = New Point(46, 39)
+        Panel7.Location = New Point(359, 423)
         Panel7.Name = "Panel7"
         Panel7.Size = New Size(38, 1)
         Panel7.TabIndex = 6
         ' 
         ' Panel8
         ' 
-        Panel8.Location = New Point(46, 42)
+        Panel8.Location = New Point(359, 458)
         Panel8.Name = "Panel8"
         Panel8.Size = New Size(38, 1)
         Panel8.TabIndex = 7
         ' 
         ' Panel9
         ' 
-        Panel9.Location = New Point(46, 45)
+        Panel9.Location = New Point(359, 493)
         Panel9.Name = "Panel9"
         Panel9.Size = New Size(38, 1)
         Panel9.TabIndex = 8
         ' 
         ' Panel10
         ' 
-        Panel10.Location = New Point(46, 48)
+        Panel10.Location = New Point(359, 528)
         Panel10.Name = "Panel10"
         Panel10.Size = New Size(38, 1)
         Panel10.TabIndex = 9
         ' 
         ' Panel11
         ' 
-        Panel11.Location = New Point(46, 51)
+        Panel11.Location = New Point(359, 563)
         Panel11.Name = "Panel11"
         Panel11.Size = New Size(38, 1)
         Panel11.TabIndex = 10
         ' 
         ' Panel12
         ' 
-        Panel12.Location = New Point(46, 54)
+        Panel12.Location = New Point(359, 598)
         Panel12.Name = "Panel12"
         Panel12.Size = New Size(38, 3)
         Panel12.TabIndex = 11
@@ -332,7 +332,7 @@ Partial Class FrmCharacterSheetMenu
         TableLayoutPanel3.Controls.Add(StaBtnDex, 0, 1)
         TableLayoutPanel3.Controls.Add(StaBtnStr, 0, 0)
         TableLayoutPanel3.Dock = DockStyle.Fill
-        TableLayoutPanel3.Location = New Point(96, 3)
+        TableLayoutPanel3.Location = New Point(722, 3)
         TableLayoutPanel3.Name = "TableLayoutPanel3"
         TableLayoutPanel3.RowCount = 6
         TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 16.666666F))
@@ -341,54 +341,60 @@ Partial Class FrmCharacterSheetMenu
         TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 16.666666F))
         TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 16.666666F))
         TableLayoutPanel3.RowStyles.Add(New RowStyle(SizeType.Percent, 16.666666F))
-        TableLayoutPanel3.Size = New Size(12, 60)
+        TableLayoutPanel3.Size = New Size(137, 642)
         TableLayoutPanel3.TabIndex = 2
         ' 
         ' StaBtnCha
         ' 
-        StaBtnCha.Location = New Point(3, 53)
+        StaBtnCha.Dock = DockStyle.Fill
+        StaBtnCha.Location = New Point(3, 538)
         StaBtnCha.Name = "StaBtnCha"
-        StaBtnCha.Size = New Size(6, 4)
+        StaBtnCha.Size = New Size(131, 101)
         StaBtnCha.StatName = "Cha"
         StaBtnCha.TabIndex = 6
         ' 
         ' StaBtnWis
         ' 
-        StaBtnWis.Location = New Point(3, 43)
+        StaBtnWis.Dock = DockStyle.Fill
+        StaBtnWis.Location = New Point(3, 431)
         StaBtnWis.Name = "StaBtnWis"
-        StaBtnWis.Size = New Size(6, 4)
+        StaBtnWis.Size = New Size(131, 101)
         StaBtnWis.StatName = "Wis"
         StaBtnWis.TabIndex = 5
         ' 
         ' StaBtnInt
         ' 
-        StaBtnInt.Location = New Point(3, 33)
+        StaBtnInt.Dock = DockStyle.Fill
+        StaBtnInt.Location = New Point(3, 324)
         StaBtnInt.Name = "StaBtnInt"
-        StaBtnInt.Size = New Size(6, 4)
+        StaBtnInt.Size = New Size(131, 101)
         StaBtnInt.StatName = "Int"
         StaBtnInt.TabIndex = 4
         ' 
         ' StaBtnCon
         ' 
-        StaBtnCon.Location = New Point(3, 23)
+        StaBtnCon.Dock = DockStyle.Fill
+        StaBtnCon.Location = New Point(3, 217)
         StaBtnCon.Name = "StaBtnCon"
-        StaBtnCon.Size = New Size(6, 4)
+        StaBtnCon.Size = New Size(131, 101)
         StaBtnCon.StatName = "Con"
         StaBtnCon.TabIndex = 3
         ' 
         ' StaBtnDex
         ' 
-        StaBtnDex.Location = New Point(3, 13)
+        StaBtnDex.Dock = DockStyle.Fill
+        StaBtnDex.Location = New Point(3, 110)
         StaBtnDex.Name = "StaBtnDex"
-        StaBtnDex.Size = New Size(6, 4)
+        StaBtnDex.Size = New Size(131, 101)
         StaBtnDex.StatName = "Dex"
         StaBtnDex.TabIndex = 2
         ' 
         ' StaBtnStr
         ' 
+        StaBtnStr.Dock = DockStyle.Fill
         StaBtnStr.Location = New Point(3, 3)
         StaBtnStr.Name = "StaBtnStr"
-        StaBtnStr.Size = New Size(6, 4)
+        StaBtnStr.Size = New Size(131, 101)
         StaBtnStr.StatName = "Str"
         StaBtnStr.TabIndex = 1
         ' 
@@ -672,7 +678,7 @@ Partial Class FrmCharacterSheetMenu
         TabPgeHealth.Controls.Add(TblLayHealthMain)
         TabPgeHealth.Location = New Point(4, 24)
         TabPgeHealth.Name = "TabPgeHealth"
-        TabPgeHealth.Size = New Size(1445, 654)
+        TabPgeHealth.Size = New Size(192, 72)
         TabPgeHealth.TabIndex = 3
         TabPgeHealth.Text = "Health"
         TabPgeHealth.UseVisualStyleBackColor = True
@@ -690,7 +696,7 @@ Partial Class FrmCharacterSheetMenu
         TblLayHealthMain.RowCount = 2
         TblLayHealthMain.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
         TblLayHealthMain.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TblLayHealthMain.Size = New Size(1445, 654)
+        TblLayHealthMain.Size = New Size(192, 72)
         TblLayHealthMain.TabIndex = 0
         ' 
         ' TableLayoutPanel4
@@ -707,7 +713,7 @@ Partial Class FrmCharacterSheetMenu
         TableLayoutPanel4.RowCount = 2
         TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
         TableLayoutPanel4.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TableLayoutPanel4.Size = New Size(716, 321)
+        TableLayoutPanel4.Size = New Size(90, 30)
         TableLayoutPanel4.TabIndex = 0
         ' 
         ' TblLayHealthPoints
@@ -728,7 +734,7 @@ Partial Class FrmCharacterSheetMenu
         TblLayHealthPoints.RowCount = 2
         TblLayHealthPoints.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
         TblLayHealthPoints.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TblLayHealthPoints.Size = New Size(352, 154)
+        TblLayHealthPoints.Size = New Size(39, 9)
         TblLayHealthPoints.TabIndex = 2
         ' 
         ' Label1
@@ -738,7 +744,7 @@ Partial Class FrmCharacterSheetMenu
         Label1.Font = New Font("Segoe UI", 12F)
         Label1.Location = New Point(3, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(134, 77)
+        Label1.Size = New Size(9, 4)
         Label1.TabIndex = 1
         Label1.Text = "Health: "
         Label1.TextAlign = ContentAlignment.TopRight
@@ -747,10 +753,10 @@ Partial Class FrmCharacterSheetMenu
         ' 
         SpnBoxHealth.Dock = DockStyle.Top
         SpnBoxHealth.Font = New Font("Segoe UI", 9F)
-        SpnBoxHealth.Location = New Point(143, 3)
+        SpnBoxHealth.Location = New Point(18, 3)
         SpnBoxHealth.Maximum = New Decimal(New Integer() {0, 0, 0, 0})
         SpnBoxHealth.Name = "SpnBoxHealth"
-        SpnBoxHealth.Size = New Size(64, 23)
+        SpnBoxHealth.Size = New Size(1, 23)
         SpnBoxHealth.TabIndex = 1
         ' 
         ' LblHealthMax
@@ -758,19 +764,19 @@ Partial Class FrmCharacterSheetMenu
         LblHealthMax.AutoSize = True
         LblHealthMax.Dock = DockStyle.Fill
         LblHealthMax.Font = New Font("Segoe UI", 12F)
-        LblHealthMax.Location = New Point(213, 0)
+        LblHealthMax.Location = New Point(25, 0)
         LblHealthMax.Name = "LblHealthMax"
-        LblHealthMax.Size = New Size(136, 77)
+        LblHealthMax.Size = New Size(11, 4)
         LblHealthMax.TabIndex = 2
         LblHealthMax.Text = "Label2"
         ' 
         ' SpnBoxHealthMod
         ' 
         SpnBoxHealthMod.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        SpnBoxHealthMod.Location = New Point(143, 80)
+        SpnBoxHealthMod.Location = New Point(18, 7)
         SpnBoxHealthMod.Minimum = New Decimal(New Integer() {100, 0, 0, Integer.MinValue})
         SpnBoxHealthMod.Name = "SpnBoxHealthMod"
-        SpnBoxHealthMod.Size = New Size(64, 23)
+        SpnBoxHealthMod.Size = New Size(1, 23)
         SpnBoxHealthMod.TabIndex = 3
         ' 
         ' Label3
@@ -778,9 +784,9 @@ Partial Class FrmCharacterSheetMenu
         Label3.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 12F)
-        Label3.Location = New Point(66, 77)
+        Label3.Location = New Point(3, 4)
         Label3.Name = "Label3"
-        Label3.Size = New Size(71, 21)
+        Label3.Size = New Size(9, 5)
         Label3.TabIndex = 4
         Label3.Text = "Damage:"
         ' 
@@ -788,9 +794,9 @@ Partial Class FrmCharacterSheetMenu
         ' 
         BtnApplyHealthModify.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         BtnApplyHealthModify.AutoSize = True
-        BtnApplyHealthModify.Location = New Point(213, 80)
+        BtnApplyHealthModify.Location = New Point(25, 7)
         BtnApplyHealthModify.Name = "BtnApplyHealthModify"
-        BtnApplyHealthModify.Size = New Size(136, 25)
+        BtnApplyHealthModify.Size = New Size(11, 1)
         BtnApplyHealthModify.TabIndex = 5
         BtnApplyHealthModify.Text = "Apply!"
         BtnApplyHealthModify.UseVisualStyleBackColor = True
@@ -803,21 +809,20 @@ Partial Class FrmCharacterSheetMenu
         TableLayoutPanel2.Controls.Add(SpnBoxTempHp, 1, 0)
         TableLayoutPanel2.Controls.Add(Label2, 0, 0)
         TableLayoutPanel2.Dock = DockStyle.Fill
-        TableLayoutPanel2.Location = New Point(361, 3)
+        TableLayoutPanel2.Location = New Point(48, 3)
         TableLayoutPanel2.Name = "TableLayoutPanel2"
         TableLayoutPanel2.RowCount = 2
         TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
         TableLayoutPanel2.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
-        TableLayoutPanel2.Size = New Size(352, 154)
+        TableLayoutPanel2.Size = New Size(39, 9)
         TableLayoutPanel2.TabIndex = 3
         ' 
         ' SpnBoxTempHp
         ' 
         SpnBoxTempHp.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
-        SpnBoxTempHp.Location = New Point(179, 3)
-        SpnBoxTempHp.Minimum = New Decimal(New Integer() {10000, 0, 0, Integer.MinValue})
+        SpnBoxTempHp.Location = New Point(22, 3)
         SpnBoxTempHp.Name = "SpnBoxTempHp"
-        SpnBoxTempHp.Size = New Size(170, 23)
+        SpnBoxTempHp.Size = New Size(14, 23)
         SpnBoxTempHp.TabIndex = 0
         ' 
         ' Label2
@@ -825,9 +830,9 @@ Partial Class FrmCharacterSheetMenu
         Label2.Anchor = AnchorStyles.Top Or AnchorStyles.Right
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 12F)
-        Label2.Location = New Point(62, 0)
+        Label2.Location = New Point(3, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(111, 21)
+        Label2.Size = New Size(13, 4)
         Label2.TabIndex = 1
         Label2.Text = "Temporary HP:"
         ' 
@@ -841,21 +846,21 @@ Partial Class FrmCharacterSheetMenu
         TblLayDeathSaves.Controls.Add(ChkLstDeathSavesN, 0, 1)
         TblLayDeathSaves.Controls.Add(Label4, 0, 0)
         TblLayDeathSaves.Dock = DockStyle.Fill
-        TblLayDeathSaves.Location = New Point(3, 163)
+        TblLayDeathSaves.Location = New Point(3, 18)
         TblLayDeathSaves.Name = "TblLayDeathSaves"
         TblLayDeathSaves.RowCount = 2
         TblLayDeathSaves.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
         TblLayDeathSaves.RowStyles.Add(New RowStyle(SizeType.Percent, 80F))
-        TblLayDeathSaves.Size = New Size(352, 155)
+        TblLayDeathSaves.Size = New Size(39, 9)
         TblLayDeathSaves.TabIndex = 4
         ' 
         ' Label5
         ' 
         Label5.Anchor = AnchorStyles.Left
         Label5.AutoSize = True
-        Label5.Location = New Point(179, 8)
+        Label5.Location = New Point(22, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(107, 15)
+        Label5.Size = New Size(14, 1)
         Label5.TabIndex = 3
         Label5.Text = "|Failed Death Saves"
         Label5.TextAlign = ContentAlignment.MiddleRight
@@ -866,9 +871,9 @@ Partial Class FrmCharacterSheetMenu
         ChkListsDeathSavesN.Dock = DockStyle.Fill
         ChkListsDeathSavesN.FormattingEnabled = True
         ChkListsDeathSavesN.Items.AddRange(New Object() {"1", "2", "3"})
-        ChkListsDeathSavesN.Location = New Point(179, 34)
+        ChkListsDeathSavesN.Location = New Point(22, 4)
         ChkListsDeathSavesN.Name = "ChkListsDeathSavesN"
-        ChkListsDeathSavesN.Size = New Size(170, 118)
+        ChkListsDeathSavesN.Size = New Size(14, 2)
         ChkListsDeathSavesN.TabIndex = 0
         ' 
         ' ChkLstDeathSavesN
@@ -877,19 +882,19 @@ Partial Class FrmCharacterSheetMenu
         ChkLstDeathSavesN.Dock = DockStyle.Fill
         ChkLstDeathSavesN.FormattingEnabled = True
         ChkLstDeathSavesN.Items.AddRange(New Object() {"1", "2", "3"})
-        ChkLstDeathSavesN.Location = New Point(3, 34)
+        ChkLstDeathSavesN.Location = New Point(3, 4)
         ChkLstDeathSavesN.Name = "ChkLstDeathSavesN"
         ChkLstDeathSavesN.RightToLeft = RightToLeft.Yes
-        ChkLstDeathSavesN.Size = New Size(170, 118)
+        ChkLstDeathSavesN.Size = New Size(13, 2)
         ChkLstDeathSavesN.TabIndex = 1
         ' 
         ' Label4
         ' 
         Label4.Anchor = AnchorStyles.Right
         Label4.AutoSize = True
-        Label4.Location = New Point(43, 8)
+        Label4.Location = New Point(3, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(130, 15)
+        Label4.Size = New Size(13, 1)
         Label4.TabIndex = 2
         Label4.Text = "Succeded Death  Saves|"
         Label4.TextAlign = ContentAlignment.MiddleRight
@@ -900,10 +905,10 @@ Partial Class FrmCharacterSheetMenu
         ChkListConditions.Dock = DockStyle.Fill
         ChkListConditions.FormattingEnabled = True
         ChkListConditions.Items.AddRange(New Object() {"Blinded", "Charmed", "Deafened", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralysed", "Petrified", "Poisoned", "Prone", "Restrained", "Stunned"})
-        ChkListConditions.Location = New Point(725, 3)
+        ChkListConditions.Location = New Point(99, 3)
         ChkListConditions.Name = "ChkListConditions"
         ChkListConditions.RightToLeft = RightToLeft.Yes
-        ChkListConditions.Size = New Size(717, 321)
+        ChkListConditions.Size = New Size(90, 30)
         ChkListConditions.TabIndex = 1
         ' 
         ' TabPgeAttacks
